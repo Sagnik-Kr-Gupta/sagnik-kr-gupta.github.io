@@ -1,13 +1,13 @@
-# main links links
+# main links
 main:
 
   - title: "Home"
     url: /home/
 
   - title: "Research"
-    url: /research/ 
+    url: /research/
 
- - title: "Conferences and Workshops"
+  - title: "Conferences and Workshops"
     url: /conference/
 
   - title: "Curriculum vitae"
