@@ -70,7 +70,7 @@ social:
   name                   : "Sagnik Kumar Gupta"
   links: # <-- PUT ARRAY OF SOCIAL LINKS HERE
     # - platform: "linkedin"
-    #   url: "https://linkedin.com/in/YOUR_LINK" 
+    #   url: "https://www.linkedin.com/in/sagnik-kumar-gupta/" 
 
 # Site Author
 author:
@@ -78,7 +78,7 @@ author:
   avatar           : "profile.jpg"
   bio              : "PhD Research Scholar"
   location         : "Hyderabad, India"
-  employer         :  "Indian Institute of Technology Hyderabad"
+  employer         :  "IIT Hyderabad"
   pubmed           : # <-- PUT PUBMED LINK IF ANY
   googlescholar    : "https://scholar.google.com/citations?user=TkVX_pcAAAAJ&hl=en"
   email            : la24resch11001@iith.ac.in
@@ -90,7 +90,7 @@ author:
   flickr           :
 #   facebook         : "YOUR_FACEBOOK_USERNAME"
   foursquare       :
-  github           : "YOUR_GITHUB_USERNAME" # <-- PUT YOUR GITHUB USERNAME
+#  github           : "YOUR_GITHUB_USERNAME" # <-- PUT YOUR GITHUB USERNAME
   google_plus      :
   keybase          :
 #   instagram        : "YOUR_INSTAGRAM_USERNAME"
