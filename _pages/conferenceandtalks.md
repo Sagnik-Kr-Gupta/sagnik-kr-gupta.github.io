@@ -4,7 +4,7 @@ title: ""
 ---
 # Conference Paper Presentations
 
-* International Economic Association World Congress, Belgrade (2026)
+<!-- * International Economic Association World Congress, Belgrade (2026) -->
 * Second CDS PhD Colloquium — *Crossroads* (2026)
 * 7th Annual Conference of Economics & Finance (ACEF), BITS Pilani, Hyderabad Campus (2026)
 * 7th Annual Economics Conference, Ahmedabad University (2026)
