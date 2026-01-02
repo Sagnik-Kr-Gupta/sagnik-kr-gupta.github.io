@@ -1,11 +1,10 @@
 ---
 ---
-
 /*
  * This file controls what is imported from /_sass
  *
  * Note that the files are processed in the order they are imported, so they are partly
-   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ * sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
 
 @import
@@ -41,3 +40,42 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+/* ==================================================
+   Research page: paper titles, links, and authors
+   ================================================== */
+
+/* Paper titles */
+.paper-title {
+  color: #1a73e8;        /* academic blue */
+  font-weight: 500;
+}
+
+.paper-title:hover {
+  text-decoration: underline;
+}
+
+/* GLO discussion paper links */
+.glo-link {
+  color: #2f6f6f;        /* muted teal, works in light & dark themes */
+  font-weight: 500;
+}
+
+.glo-link:hover {
+  text-decoration: underline;
+}
+
+/* Author line */
+.authors {
+  font-size: 0.9em;
+  color: #000000;       /* black */
+}
+
+.authors a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.authors a:hover {
+  text-decoration: underline;
+}
