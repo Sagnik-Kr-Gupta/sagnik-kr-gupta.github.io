@@ -6,19 +6,33 @@ title: ""
 
 # Working Papers
 
-* “[Rewiring Gender Norms: Causal Evidence on Internet Exposure and Justification of Intimate Partner Violence](https://www.econstor.eu/handle/10419/333329),” November 2025.  
-[GLO Working Paper](/files/pdf/GLO-DP-1690.pdf)   
-<span style="font-size: 0.9em; color:#808080"> with [Dr. Gaurav Dhamija](https://gauravdhamija5.weebly.com/) and [Dr. Manini Ojha](https://maniniojha.wordpress.com/)</span> 
+* <a href="https://www.econstor.eu/handle/10419/333329" class="paper-title">
+Rewiring Gender Norms: Causal Evidence on Internet Exposure and Justification of Intimate Partner Violence
+</a>, November 2025.  
+<a href="/files/pdf/GLO-DP-1690.pdf" class="glo-link">GLO Discussion Paper</a>  
+<span class="authors">
+with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
+<a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
+</span>
 
-* “[The Protective Power of Connectivity: Internet Exposure and Intimate Partner Violence](https://www.econstor.eu/handle/10419/333329),” November 2025.  
-[GLO Working Paper](/files/pdf/GLO-DP-1696.pdf)   
-<span style="font-size: 0.9em; color:#808080"> with [Dr. Gaurav Dhamija](https://gauravdhamija5.weebly.com/) and [Dr. Manini Ojha](https://maniniojha.wordpress.com/)</span>   
+* <a href="https://www.econstor.eu/handle/10419/333329" class="paper-title">
+The Protective Power of Connectivity: Internet Exposure and Intimate Partner Violence
+</a>, November 2025.  
+<a href="/files/pdf/GLO-DP-1696.pdf" class="glo-link">GLO Discussion Paper</a>  
+<span class="authors">
+with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
+<a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
+</span>
 
-* “[Banking on Connectivity: Internet Exposure and Women’s Financial Autonomy](https://www.econstor.eu/handle/10419/333329),” December 2025.  
-[GLO Working Paper](/files/pdf/GLO-DP-1697.pdf)   
-<span style="font-size: 0.9em; color:#808080"> with [Dr. Gaurav Dhamija](https://gauravdhamija5.weebly.com/) and [Dr. Manini Ojha](https://maniniojha.wordpress.com/)</span>
+* <a href="https://www.econstor.eu/handle/10419/333329" class="paper-title">
+Banking on Connectivity: Internet Exposure and Women’s Financial Autonomy
+</a>, December 2025.  
+<a href="/files/pdf/GLO-DP-1697.pdf" class="glo-link">GLO Discussion Paper</a>  
+<span class="authors">
+with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
+<a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
+</span>
 
-<!--* <span style="font-size: 0.95em; color:#708090"> Under Review </span> -->  
 
 # Work in Progress
 
