@@ -273,3 +273,9 @@ compress_html:
 
 theme: jekyll-theme-midnight
 
+# Analytics (GA4)
+analytics:
+  provider: google-gtag
+  google:
+    tracking_id: G-4VKTV7ZDH9
+    anonymize_ip: true
