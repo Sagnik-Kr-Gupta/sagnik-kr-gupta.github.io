@@ -24,4 +24,4 @@ I completed my Master’s in Population Studies and Health Economics from Gokhal
 - Health Economics  
 - Political Economy
 
-Email : [la24resch11001@iith.ac.in](mailto:la24resch11001@iith.ac.in) or [sagnikkumargupta00@gmail.com ](mailto:sagnikkumargupta00@gmail.com )  
+Email : [la24resch11001@iith.ac.in](mailto:la24resch11001@iith.ac.in) / [sagnikkumargupta00@gmail.com ](mailto:sagnikkumargupta00@gmail.com )  
