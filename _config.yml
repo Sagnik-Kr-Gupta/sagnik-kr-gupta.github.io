@@ -271,7 +271,7 @@ compress_html:
   ignore:
     envs: development
 
-theme: jekyll-theme-midnight
+remote_theme: "mmistakes/minimal-mistakes"
 
 # Analytics (GA4)
 analytics:
