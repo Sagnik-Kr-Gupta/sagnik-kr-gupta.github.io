@@ -6,7 +6,7 @@ title: ""
 # Working Papers
 
 * <a href="https://www.econstor.eu/handle/10419/333329" class="paper-title">
-Rewiring Gender Norms: Causal Evidence on Internet Exposure and Justification of Intimate Partner Violence
+The Protective Power of Connectivity: Internet Exposure and Intimate Partner Violence
 </a>  
 <a href="/files/pdf/GLO-DP-1690.pdf" class="glo-link">GLO Discussion Paper</a>  
 <span class="authors">
@@ -14,8 +14,8 @@ with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
 <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
 </span>
 
-* <a href="https://www.econstor.eu/handle/10419/333329" class="paper-title">
-The Protective Power of Connectivity: Internet Exposure and Intimate Partner Violence
+* <a href="https://www.econstor.eu/handle/10419/331320" class="paper-title">
+Rewiring Gender Norms: Causal Evidence on Internet Exposure and Justification of Intimate Partner Violence
 </a>  
 <a href="/files/pdf/GLO-DP-1696.pdf" class="glo-link">GLO Discussion Paper</a>  
 <span class="authors">
@@ -23,7 +23,7 @@ with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
 <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
 </span>
 
-* <a href="https://www.econstor.eu/handle/10419/333329" class="paper-title">
+* <a href="https://www.econstor.eu/handle/10419/333697" class="paper-title">
 Banking on Connectivity: Internet Exposure and Women’s Financial Autonomy
 </a>  
 <a href="/files/pdf/GLO-DP-1697.pdf" class="glo-link">GLO Discussion Paper</a>  
