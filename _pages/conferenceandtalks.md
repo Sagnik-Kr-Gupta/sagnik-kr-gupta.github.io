@@ -8,5 +8,5 @@ title: ""
 * Second CDS PhD Colloquium — *Crossroads* (2026)
 * 7th Annual Conference of Economics & Finance (ACEF), BITS Pilani, Hyderabad Campus (2026)
 * 7th Annual Economics Conference, Ahmedabad University (2026)
-* 35th Annual Conference on Development Economics, Jadavpur University (2026)
+* XXXVth Annual Conference on Contemporary Issues in Development Economics, Jadavpur University (2026)
 * XXX IIPS National Seminar, Thiruvananthapuram (2025)
