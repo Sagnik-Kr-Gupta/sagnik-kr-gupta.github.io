@@ -5,6 +5,9 @@ title: ""
 # Conference Paper Presentations
 
 <!-- * International Economic Association World Congress, Belgrade (2026) -->
+* Peace and Conflict (PAC) Workshop, Plaksha University (2026)
+* IIM Calcutta Economics Research Conference (2026)
+* Research Scholars’ Day, 2026, IIT Kanpur (2026)
 * Second CDS PhD Colloquium — *Crossroads* (2026)
 * 7th Annual Conference of Economics & Finance (ACEF), BITS Pilani, Hyderabad Campus (2026)
 * 7th Annual Economics Conference, Ahmedabad University (2026)
