@@ -32,18 +32,17 @@ with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
 <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
 </span>
 
+* <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6257379" class="paper-title">
+Knot Too Early: The Causal Impact of Women's Age at Marriage on Period Product Use
+</a>  
+<a href="/files/pdf/GLO-DP-1697.pdf" class="glo-link">Working Paper</a>  
+<span class="authors">
+with <a href="https://sites.google.com/iima.ac.in/karan-babbar/home">Dr. Karan Babbar</a> and
+<a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a>
+</span>
 ---
 
 # Work in Progress
-
-* <span class="paper-title">
-Knot Too Early: The Causal Impact of Women’s Age at Marriage on Hygienic Period Products Use
-</span>  
-<span class="glo-link">Work in Progress</span>  
-<span class="authors">
-with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
-<a href="https://sites.google.com/iima.ac.in/karan-babbar/home">Dr. Karan Babbar</a>
-</span>
 
 * <span class="paper-title">
 Causal Impact of Internet Exposure on Period Products Usage in India
