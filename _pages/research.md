@@ -40,6 +40,7 @@ Knot Too Early: The Causal Impact of Women's Age at Marriage on Period Product U
 with <a href="https://sites.google.com/iima.ac.in/karan-babbar/home">Dr. Karan Babbar</a> and
 <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a>
 </span>
+
 ---
 
 # Work in Progress
