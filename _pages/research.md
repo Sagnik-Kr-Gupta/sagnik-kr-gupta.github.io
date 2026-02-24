@@ -35,7 +35,7 @@ with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
 * <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6257379" class="paper-title">
 Knot Too Early: The Causal Impact of Women's Age at Marriage on Period Product Use
 </a>  
-<a href="/files/pdf/GLO-DP-1697.pdf" class="glo-link">Working Paper</a>  
+<a href="/files/pdf/ssrn-6257379.pdf" class="glo-link">Working Paper</a>  
 <span class="authors">
 with <a href="https://sites.google.com/iima.ac.in/karan-babbar/home">Dr. Karan Babbar</a> and
 <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a>
