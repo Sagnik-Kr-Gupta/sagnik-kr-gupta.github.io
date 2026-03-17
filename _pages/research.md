@@ -41,6 +41,17 @@ with <a href="https://sites.google.com/iima.ac.in/karan-babbar/home">Dr. Karan B
 <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a>
 </span>
 
+* <a href="https://www.policyedge.in/working-paper/wp-from-liquor-to-lpg-spillover-effects-of-alcohol-prohibition-on-clean-fuel-adoption" class="paper-title">
+From Liquor to LPG: Spillover effects of alcohol prohibition on clean fuel adoption
+</a>  
+<a href="/files/pdf/ssrn-6257379.pdf" class="glo-link"> Policy Edge Working Paper</a>  
+<span class="authors">
+with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
+<a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
+</span>
+
+
+
 ---
 
 # Work in Progress
