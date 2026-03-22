@@ -2,7 +2,7 @@
 permalink: /conference/
 title: ""
 ---
-# Conference Paper Presentations
+# Conferences & Invited Talks
 
 ## 2026
 <!-- * International Economic Association World Congress, Belgrade (2026) -->
