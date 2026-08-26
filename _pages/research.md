@@ -51,7 +51,6 @@ with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
 </span>
 
 * <a href="https://www.dropbox.com/scl/fo/oxivc59t7de1zea2rultr/AAiGN7QtmEX-5grNwKnrwrg?dl=0&e=1&preview=The+Long+Shadow+of+Communal+Violence.pdf&rlkey=u8q14ur09l983r2v9dc9dj2sc" class="paper-title">
-
 The Long Shadow of Communal Violence: Childhood Exposure and Later-Life Mental Health </a> <a href="/files/pdf/Childhood_Riot_Exposure_and_Mental_Health.pdf" class="glo-link"> Policy Edge Working Paper</a> <span class="authors">
 with <a href="https://broomcenter.ucsb.edu/people/reetika-sindhi">Reetika Sindhi</a> and <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> </span>
 
