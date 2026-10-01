@@ -55,7 +55,7 @@ The Long Shadow of Communal Violence: Childhood Exposure and Later-Life Mental H
 </a>  
 <a href="/files/pdf/Childhood_Riot_Exposure_and_Mental_Health.pdf" class="glo-link">Working Paper</a>  
 <span class="authors">
-with <a href="https://broomcenter.ucsb.edu/people/reetika-sindhi">Reetika Sindhi</a> and
+with <a href="https://www.reetikasindhi.com">Reetika Sindhi</a> and
 <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a>
 </span>
 
