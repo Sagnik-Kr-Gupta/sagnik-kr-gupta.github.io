@@ -51,13 +51,13 @@ li.ev.hl .when { color:var(--red); }
 ## 2026
 
 <ul class="events">
-<li class="ev" data-city="Bengaluru" data-year="2026" data-start="">
-<span class="when tba">Date to be added</span>
+<li class="ev" data-city="Bengaluru" data-year="2026" data-start="2026-09-02">
+<span class="when">Sep 2–4</span>
 <span class="what"><b>XXI International Conference on Public Policy and Management, Centre for Public Policy (CPP), IIM Bangalore</b><span class="where">Bengaluru, Karnataka</span></span>
 </li>
-<li class="ev" data-city="Sri City" data-year="2026" data-start="">
-<span class="when tba">Date to be added</span>
-<span class="what"><b>Research Symposium on Finance and Economics (RSFE), Krea University</b><span class="where">Sri City, Andhra Pradesh</span></span>
+<li class="ev" data-city="Sri City" data-year="2026" data-start="2026-06-17">
+<span class="when">Jun 17–19</span>
+<span class="what"><b>Research Symposium on Finance and Economics (RSFE), Krea University</b><span class="where">Virtual · hosted at IFMR GSB, Krea University, Sri City</span></span>
 </li>
 <li class="ev" data-city="Mohali" data-year="2026" data-start="2026-03-20">
 <span class="when">Mar 20–21</span>
@@ -101,7 +101,6 @@ li.ev.hl .when { color:var(--red); }
 ## Map
 
 <div class="mapwrap"><div id="confmap" role="img" aria-label="Map of conference locations"></div><div class="mapctl"><button type="button" id="btn-play">Play journey</button><button type="button" id="btn-view">Show world</button></div></div>
-<p class="mapnote">Each pin is a host city (the number is how many events were held there). The dashed line follows the dated events in chronological order. Click a pin or an entry above to link them.</p>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
@@ -113,13 +112,10 @@ li.ev.hl .when { color:var(--red); }
   var dated = items.filter(function (li) { return li.getAttribute('data-start'); }).sort(function (a, b) { return a.getAttribute('data-start') < b.getAttribute('data-start') ? -1 : 1; });
   var seq = [];
   dated.forEach(function (li) { var c = li.getAttribute('data-city'); if (seq[seq.length - 1] !== c) { seq.push(c); } });
-  function hav(a, b) { var R = 6371, r = Math.PI / 180, dl = (b[0] - a[0]) * r, dn = (b[1] - a[1]) * r; var x = Math.sin(dl / 2) * Math.sin(dl / 2) + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dn / 2) * Math.sin(dn / 2); return 2 * R * Math.asin(Math.sqrt(x)); }
-  var km = 0;
-  for (var i = 1; i < seq.length; i++) { km += hav(COORDS[seq[i - 1]], COORDS[seq[i]]); }
   var years = {};
   items.forEach(function (li) { years[li.getAttribute('data-year')] = 1; });
   var ledger = document.getElementById('ledger');
-  var stats = [[items.length, 'events'], [Object.keys(groups).length, 'cities'], [Object.keys(years).length, 'years'], ['≈ ' + (Math.round(km / 100) * 100).toLocaleString('en-IN'), 'km between venues']];
+  var stats = [[items.length, 'events'], [Object.keys(groups).length, 'cities'], [Object.keys(years).length, 'years']];
   stats.forEach(function (s) { var sp = document.createElement('span'); sp.innerHTML = '<b>' + s[0] + '</b>' + s[1]; ledger.appendChild(sp); });
   if (!window.L) { document.getElementById('confmap').outerHTML = '<p class="mapnote">The map could not be loaded.</p>'; return; }
   var map = L.map('confmap', { scrollWheelZoom: false, worldCopyJump: true, zoomSnap: 0.25 });
@@ -158,7 +154,6 @@ li.ev.hl .when { color:var(--red); }
     if (m && m._icon) { var p = m._icon.firstChild; if (p) { p.classList.toggle('on', on); } }
     (groups[c] || []).forEach(function (li) { li.classList.toggle('hl', on); });
   }
-  if (seq.length > 1) { L.polyline(seq.map(function (c) { return COORDS[c]; }), { color: '#1f5c5a', weight: 2, opacity: 0.65, dashArray: '6 8' }).addTo(map); }
   function fitIndia() { map.fitBounds(all, { padding: [40, 40], maxZoom: 6 }); }
   fitIndia();
   var world = false;
