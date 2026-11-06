@@ -28,23 +28,6 @@ button.tag:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
 #rp-status { margin:0.2em 0 0.6em; font-size:0.82em; font-style:italic; color:var(--mut); }
 #rp-status button { font:inherit; font-size:1em; cursor:pointer; margin-left:0.6em; color:var(--acc); background:transparent; border:0; border-bottom:1px solid var(--acc); padding:0; }
 #rp-empty { font-style:italic; color:var(--mut); }
-details.net { margin:0 0 1.2em; border:1px solid var(--rule); border-radius:2px; }
-details.net > summary { cursor:pointer; list-style:none; padding:0.6em 1em; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.72em; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--acc); }
-details.net > summary::-webkit-details-marker { display:none; }
-details.net > summary::marker { content:""; }
-details.net > summary::after { content:" +"; }
-details.net[open] > summary::after { content:" –"; }
-details.net .netnote { margin:0 1em 0.2em; font-size:0.8em; font-style:italic; color:var(--mut); }
-#net-svg { display:block; width:100%; height:auto; max-height:300px; }
-#net-svg .edge { stroke:var(--mut); opacity:0.4; transition:opacity 0.2s,stroke 0.2s; }
-#net-svg .edge.on { stroke:var(--acc); opacity:0.9; }
-#net-svg .node { cursor:pointer; outline:none; }
-#net-svg .node circle { fill:var(--acc); stroke:transparent; stroke-width:3; transition:all 0.2s ease; }
-#net-svg .node.me circle { fill:var(--red); cursor:default; }
-#net-svg .node:hover circle, #net-svg .node:focus circle { stroke:var(--acc-soft); stroke-width:8; }
-#net-svg .node.sel circle { stroke:var(--red); stroke-width:3; }
-#net-svg .ncount { fill:#fff; font:700 12px ui-monospace,Menlo,monospace; text-anchor:middle; dominant-baseline:central; pointer-events:none; }
-#net-svg .nlabel { fill:var(--ink); font:600 13px Georgia,"Iowan Old Style",serif; text-anchor:middle; pointer-events:none; }
 h1[id] { position:relative; display:flex; align-items:baseline; justify-content:space-between; margin:2.6em 0 1em; padding-bottom:0.5em; font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; font-size:1.05em; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--rule); }
 h1[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem; height:3px; background:var(--acc); }
 h1[id] .count { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.8em; font-weight:400; letter-spacing:0; color:var(--mut); }
@@ -101,18 +84,13 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 <div class="frow"><span class="flabel">Method</span><button type="button" class="tag lg" data-f="method:iv" aria-pressed="false">Instrumental variables</button><button type="button" class="tag lg" data-f="method:did" aria-pressed="false">Difference-in-differences</button><button type="button" class="tag lg" data-f="method:cohort" aria-pressed="false">Cohort variation</button></div>
 <div class="frow"><span class="flabel">Data</span><button type="button" class="tag lg" data-f="data:nfhs" aria-pressed="false">NFHS-5</button><button type="button" class="tag lg" data-f="data:hces" aria-pressed="false">HCES</button><button type="button" class="tag lg" data-f="data:lasi" aria-pressed="false">LASI</button></div>
 </div>
-<details class="net" open>
-<summary>Collaboration map</summary>
-<p class="netnote">Bigger circles mean more joint papers. Click a collaborator to see only the work we share.</p>
-<svg id="net-svg" viewBox="0 0 640 280" role="group" aria-label="Collaboration network"></svg>
-</details>
 <p id="rp-status" aria-live="polite" hidden></p>
 <p id="rp-empty" hidden>No papers match your search.</p>
 
 # Peer-reviewed Publications
 
 <ul class="papers">
-<li class="entry" data-id="rewiring" data-method="iv" data-data="nfhs" data-people="gd mo">
+<li class="entry" data-id="rewiring" data-method="iv" data-data="nfhs">
 <span class="kicker pub">Journal Article · 2026</span>
 <a href="https://link.springer.com/article/10.1007/s11150-026-09887-5" class="paper-title">Rewiring Gender Norms: Causal Evidence on Internet Exposure and Justification of Intimate Partner Violence</a>
 <span class="journal">Review of Economics of the Household</span>
@@ -144,7 +122,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 # Working Papers
 
 <ul class="papers">
-<li class="entry" data-id="protective" data-method="iv" data-data="nfhs" data-people="gd mo">
+<li class="entry" data-id="protective" data-method="iv" data-data="nfhs">
 <span class="kicker">Working Paper · GLO DP 1690</span>
 <a href="https://www.econstor.eu/handle/10419/331320" class="paper-title">The Protective Power of Connectivity: Internet Exposure and Intimate Partner Violence</a>
 <a href="/files/pdf/GLO-DP-1690.pdf" class="glo-link">GLO Discussion Paper</a>
@@ -155,7 +133,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 <div class="abstract-text">We study the effect of women’s exposure to the internet on the incidence of intimate partner violence (IPV) utilizing data from a large-scale nationally representative data for India. Utilizing an instrumental variable approach, we exploit the exogenous variation arising from cellular tower density at the district level as an instrument for internet exposure. We find women who have access to the internet are at a significantly lower risk of exposure to physical, sexual, emotional and any IPV by 17, 5, 9 and 18 percentage points. We provide further indicative evidence that women’s attitudes justifying violence works as a channel of our estimated causal impacts. Our results are robust to a host of sensitivity checks, additional controls, alternative definitions and falsification analysis. We document important heterogeneity in the effects across social groups, wealth index, area of residence, and women’s education levels. The effects appear to be particularly important for women from wealthier households and those who are more educated.</div>
 </details>
 </li>
-<li class="entry" data-id="banking" data-method="iv" data-data="" data-people="gd mo">
+<li class="entry" data-id="banking" data-method="iv" data-data="">
 <span class="kicker">Working Paper · GLO DP 1697</span>
 <a href="https://www.econstor.eu/handle/10419/333697" class="paper-title">Banking on Connectivity: Internet Exposure and Women’s Financial Autonomy</a>
 <a href="/files/pdf/GLO-DP-1697.pdf" class="glo-link">GLO Discussion Paper</a>
@@ -166,7 +144,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 <div class="abstract-text">We examine whether women's exposure to the internet enhances their economic agency in India. Using nationally representative data and an instrumental variables strategy that exploits plausibly exogenous variation in district-level mobile tower density, we identify the causal effect of internet access on women's financial control and use of formal banks. We find that internet exposure increases women's overall financial autonomy by 10 percentage points. We document improvements in independent mobility, employment, and financial awareness which we consider potential mechanisms of our estimated effects. Disaggregated outcomes show higher likelihood that women have money of their own over which they full control, as well as increased ownership and active use of a bank account. Our results are robust to additional controls and a battery of sensitivity analyses. Heterogeneity analyses indicate that effects are concentrated among women with at least secondary education, and among those from historically disadvantaged social groups. Overall, our findings highlight the importance of digital connectivity in enhancing the usage of financial resources, with important implications for women's autonomy and participation in the formal economy.</div>
 </details>
 </li>
-<li class="entry" data-id="knot" data-method="iv" data-data="nfhs" data-people="kb gd">
+<li class="entry" data-id="knot" data-method="iv" data-data="nfhs">
 <span class="kicker">Working Paper · SSRN</span>
 <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6257379" class="paper-title">Knot Too Early: The Causal Impact of Women's Age at Marriage on Period Product Use</a>
 <a href="/files/pdf/ssrn-6257379.pdf" class="glo-link">Working Paper</a>
@@ -177,7 +155,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 <div class="abstract-text">This paper evaluates the causal impact of women’s age at marriage on their likelihood of using hygienic period products, using the most recent round of the National Family Health Survey (NFHS-5) in India. To address potential endogeneity, we exploit exogenous variation in a woman's age at menarche as an instrument for her age at marriage. The instrumental variable (IV) estimation provides robust evidence that a one-year increase in a woman's age at marriage increases, on an average, the likelihood of hygienic product use by 7 percentage points. We also provide suggestive evidence that higher education and increased household decision-making power are potential mechanisms driving this effect. These findings signify the importance of enforcing laws regulating the legal age of marriage, and highlight the broader need for societal shifts that promote later marriage, better menstrual hygiene, and the empowerment of young women.</div>
 </details>
 </li>
-<li class="entry" data-id="liquor" data-method="did" data-data="hces" data-people="gd mo">
+<li class="entry" data-id="liquor" data-method="did" data-data="hces">
 <span class="kicker">Working Paper · Policy Edge 2026-0001</span>
 <a href="https://www.policyedge.in/working-paper/wp-from-liquor-to-lpg-spillover-effects-of-alcohol-prohibition-on-clean-fuel-adoption" class="paper-title">From Liquor to LPG: Spillover effects of alcohol prohibition on clean fuel adoption</a>
 <a href="/files/pdf/TPE_WP_2026-0001.pdf" class="glo-link">Policy Edge Working Paper</a>
@@ -188,7 +166,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 <div class="abstract-text">This paper examines whether Bihar’s 2016 alcohol prohibition generated spillover effects on household adoption of LPG as a primary cooking fuel. Although clean cooking lies well outside the policy’s intended scope, prohibition may affect fuel choice by altering household expenditure patterns and intra-household dynamics. Using repeated cross-sectional data from the Household Consumption Expenditure Surveys of 2011–12 and 2023–24, we implement a PSM-DID design, comparing Bihar with Jharkhand. We estimate that the prohibition increased primary LPG adoption by 12.8 percentage points. The effect is concentrated in rural areas and is robust to alternative estimators, sample restrictions, and falsification tests. We further discuss that this spillover operates through reduced alcohol spending that relaxes the budget constraint for recurring LPG use and improved women’s intra-household agency following prohibition. The results highlight that policies aimed at curbing socially costly consumption can generate broader welfare gains in unexpected domains, including clean energy adoption.</div>
 </details>
 </li>
-<li class="entry" data-id="long" data-method="cohort" data-data="lasi" data-people="rs gd">
+<li class="entry" data-id="long" data-method="cohort" data-data="lasi">
 <span class="kicker">Working Paper</span>
 <a href="https://www.dropbox.com/scl/fo/oxivc59t7de1zea2rultr/AAiGN7QtmEX-5grNwKnrwrg?dl=0&amp;e=1&amp;preview=The+Long+Shadow+of+Communal+Violence.pdf&amp;rlkey=u8q14ur09l983r2v9dc9dj2sc" class="paper-title">The Long Shadow of Communal Violence: Childhood Exposure and Later-Life Mental Health</a>
 <a href="/files/pdf/Childhood_Riot_Exposure_and_Mental_Health.pdf" class="glo-link">Working Paper</a>
@@ -204,7 +182,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 # Work in Progress
 
 <ul class="papers">
-<li class="entry" data-id="wip" data-method="" data-data="" data-people="gd mo">
+<li class="entry" data-id="wip" data-method="" data-data="">
 <span class="kicker">Work in Progress</span>
 <span class="paper-title">Causal Impact of Internet Exposure on Period Products Usage in India</span>
 <span class="authors">with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a></span>
@@ -214,7 +192,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 # Other Publications
 
 <ul class="papers">
-<li class="entry" data-id="opinion" data-method="" data-data="" data-people="gd mo">
+<li class="entry" data-id="opinion" data-method="" data-data="">
 <span class="kicker">Opinion · 19 September 2026</span>
 <a href="https://www.policyedge.in/p/how-digital-access-can-change-domestic-violence" class="paper-title">How Digital Access Can Change Domestic Violence</a>
 <span class="outlet">The Policy Edge</span>
@@ -246,8 +224,8 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
   });
 
   /* ---------- filters ---------- */
-  var S = { method: '', data: '', person: '', q: '' };
-  var NAMES = { method: { iv: 'Instrumental variables', did: 'Difference-in-differences', cohort: 'Cohort variation' }, data: { nfhs: 'NFHS-5', hces: 'HCES', lasi: 'LASI' }, person: { gd: 'Dr. Gaurav Dhamija', mo: 'Dr. Manini Ojha', kb: 'Dr. Karan Babbar', rs: 'Reetika Sindhi' } };
+  var S = { method: '', data: '', q: '' };
+  var NAMES = { method: { iv: 'Instrumental variables', did: 'Difference-in-differences', cohort: 'Cohort variation' }, data: { nfhs: 'NFHS-5', hces: 'HCES', lasi: 'LASI' } };
   var box = document.getElementById('rp-search');
   var empty = document.getElementById('rp-empty');
   var status = document.getElementById('rp-status');
@@ -256,7 +234,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
     var shown = 0;
     entries.forEach(function (li) {
       var d = li.querySelector('details.abstract');
-      var hit = (!S.method || has(li.getAttribute('data-method'), S.method)) && (!S.data || has(li.getAttribute('data-data'), S.data)) && (!S.person || has(li.getAttribute('data-people'), S.person)) && (!S.q || li.__t.indexOf(S.q) > -1);
+      var hit = (!S.method || has(li.getAttribute('data-method'), S.method)) && (!S.data || has(li.getAttribute('data-data'), S.data)) && (!S.q || li.__t.indexOf(S.q) > -1);
       li.style.display = hit ? '' : 'none';
       if (hit) { shown++; }
       if (d && S.q) { d.open = hit && d.textContent.toLowerCase().indexOf(S.q) > -1; }
@@ -271,20 +249,15 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
       var p = b.getAttribute('data-f').split(':');
       b.setAttribute('aria-pressed', S[p[0]] === p[1] ? 'true' : 'false');
     });
-    Array.prototype.forEach.call(document.querySelectorAll('#net-svg .node'), function (g) {
-      g.classList.toggle('sel', g.getAttribute('data-p') === S.person && !!S.person);
-      g.setAttribute('aria-pressed', g.classList.contains('sel') ? 'true' : 'false');
-    });
     var bits = [];
     if (S.method) { bits.push('Method: ' + NAMES.method[S.method]); }
     if (S.data) { bits.push('Data: ' + NAMES.data[S.data]); }
-    if (S.person) { bits.push('With: ' + NAMES.person[S.person]); }
     if (S.q) { bits.push('Search: “' + S.q + '”'); }
     if (status) {
       status.hidden = !bits.length;
       status.innerHTML = 'Showing ' + shown + ' of ' + entries.length + ' · ' + bits.join(' · ') + '<button type="button" id="rp-clear">Clear all</button>';
       var cl = document.getElementById('rp-clear');
-      if (cl) { cl.addEventListener('click', function () { S.method = S.data = S.person = S.q = ''; if (box) { box.value = ''; } apply(); }); }
+      if (cl) { cl.addEventListener('click', function () { S.method = S.data = S.q = ''; if (box) { box.value = ''; } apply(); }); }
     }
     if (empty) { empty.hidden = shown > 0; }
   }
@@ -306,50 +279,6 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
       open = !open;
       document.querySelectorAll('details.abstract').forEach(function (d) { d.open = open; });
       btn.textContent = open ? 'Collapse all abstracts' : 'Expand all abstracts';
-    });
-  }
-
-  /* ---------- collaboration network ---------- */
-  var svg = document.getElementById('net-svg');
-  if (svg) {
-    var P = { sg: { n: 'Me', x: 320, y: 138 }, gd: { n: 'Dr. Gaurav Dhamija', x: 130, y: 72 }, mo: { n: 'Dr. Manini Ojha', x: 510, y: 72 }, kb: { n: 'Dr. Karan Babbar', x: 150, y: 212 }, rs: { n: 'Reetika Sindhi', x: 490, y: 212 } };
-    var cnt = { gd: 0, mo: 0, kb: 0, rs: 0 }, pair = {};
-    entries.forEach(function (li) {
-      var ps = (li.getAttribute('data-people') || '').split(' ').filter(Boolean);
-      ps.forEach(function (p) { cnt[p]++; });
-      for (var i = 0; i < ps.length; i++) { for (var j = i + 1; j < ps.length; j++) { var k = [ps[i], ps[j]].sort().join('-'); pair[k] = (pair[k] || 0) + 1; } }
-    });
-    var NS = 'http://www.w3.org/2000/svg';
-    function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); Object.keys(attrs).forEach(function (a) { e.setAttribute(a, attrs[a]); }); if (parent) { parent.appendChild(e); } return e; }
-    var edges = [];
-    Object.keys(cnt).forEach(function (p) { edges.push(['sg', p, cnt[p]]); });
-    Object.keys(pair).forEach(function (k) { var a = k.split('-'); edges.push([a[0], a[1], pair[k]]); });
-    var eg = el('g', {}, svg), lines = [];
-    edges.forEach(function (e) {
-      if (!e[2]) { return; }
-      var ln = el('line', { 'class': 'edge', x1: P[e[0]].x, y1: P[e[0]].y, x2: P[e[1]].x, y2: P[e[1]].y, 'stroke-width': (1 + e[2] * 0.7).toFixed(1) }, eg);
-      ln.__ends = [e[0], e[1]];
-      lines.push(ln);
-    });
-    function light(p) { lines.forEach(function (l) { l.classList.toggle('on', !!p && l.__ends.indexOf(p) > -1); }); }
-    Object.keys(P).forEach(function (id) {
-      var r = id === 'sg' ? 30 : 14 + Math.min(cnt[id], 8) * 2;
-      var g = el('g', { 'class': 'node' + (id === 'sg' ? ' me' : ''), 'data-p': id, transform: 'translate(' + P[id].x + ',' + P[id].y + ')' }, svg);
-      if (id !== 'sg') { g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button'); g.setAttribute('aria-pressed', 'false'); g.setAttribute('aria-label', P[id].n + ', ' + cnt[id] + (cnt[id] === 1 ? ' shared paper' : ' shared papers')); }
-      var t = el('title', {}, g); t.textContent = id === 'sg' ? 'Me' : P[id].n + ' · ' + cnt[id] + (cnt[id] === 1 ? ' shared paper' : ' shared papers') + ' (click to filter)';
-      el('circle', { r: r }, g);
-      var c = el('text', { 'class': 'ncount' }, g); c.textContent = id === 'sg' ? '' : cnt[id];
-      var l = el('text', { 'class': 'nlabel', y: r + 17 }, g); l.textContent = P[id].n;
-      if (id !== 'sg') {
-        g.addEventListener('click', function () { setF('person', id); });
-        g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setF('person', id); } });
-        g.addEventListener('mouseenter', function () { light(id); });
-        g.addEventListener('mouseleave', function () { light(S.person); });
-        g.addEventListener('focus', function () { light(id); });
-        g.addEventListener('blur', function () { light(S.person); });
-      } else {
-        g.addEventListener('click', function () { S.person = ''; apply(); light(''); });
-      }
     });
   }
 
