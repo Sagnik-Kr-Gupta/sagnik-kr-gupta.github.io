@@ -106,11 +106,11 @@ I am a **Ph.D. scholar in Development Studies** in the Department of Liberal Art
 <script>
 (function () {
   var RELATED = {
-    micro: ['Applied Microeconometrics', ['Rewiring Gender Norms (instrumental variables)', 'Banking on Connectivity (instrumental variables)', 'From Liquor to LPG (matched difference-in-differences)']],
-    dev: ['Empirical Development Economics', ['The Protective Power of Connectivity', 'Banking on Connectivity', 'From Liquor to LPG']],
-    gender: ['Gender Economics', ['Rewiring Gender Norms', 'The Protective Power of Connectivity', 'Banking on Connectivity', 'Knot Too Early']],
-    health: ['Health Economics', ['Knot Too Early (menstrual hygiene)', 'The Long Shadow of Communal Violence (mental health)']],
-    political: ['Political Economy', ['The Long Shadow of Communal Violence', 'From Liquor to LPG (alcohol prohibition policy)']]
+    micro: ['Applied Microeconometrics', ['Rewiring Gender Norms (Instrumental variables)', 'The Protective Power of Connectivity (Instrumental variables)', 'Banking on Connectivity (Instrumental variables)', 'Knot Too Early (Instrumental variables)', 'From Liquor to LPG (Matched difference-in-differences)', 'The Long Shadow of Communal Violence (Variation across districts and birth cohorts)']],
+    dev: ['Empirical Development Economics', ['Rewiring Gender Norms', 'The Protective Power of Connectivity', 'Banking on Connectivity', 'Knot Too Early', 'From Liquor to LPG', 'The Long Shadow of Communal Violence']],
+    gender: ['Gender Economics', ['Rewiring Gender Norms', 'The Protective Power of Connectivity', 'Banking on Connectivity', 'Knot Too Early', 'The Long Shadow of Communal Violence']],
+    health: ['Health Economics', ['The Protective Power of Connectivity (Intimate partner violence)', 'Knot Too Early (Menstrual hygiene)', 'The Long Shadow of Communal Violence (Mental health)']],
+    political: ['Political Economy', ['The Long Shadow of Communal Violence', 'From Liquor to LPG (Alcohol prohibition policy)']]
   };
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
   var panel = document.getElementById('related');
