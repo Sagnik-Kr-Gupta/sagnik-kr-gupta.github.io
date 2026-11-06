@@ -25,6 +25,8 @@ h2[id]::after { content:""; flex:1; height:1px; background:var(--rule); }
 .pin.on { background:var(--red); transform:scale(1.25); }
 .pin.on::before { border-color:var(--red); animation:pinPulse 1.2s ease-out infinite; }
 @keyframes pinPulse { from { transform:scale(1); opacity:0.8; } to { transform:scale(2.2); opacity:0; } }
+#confmap .leaflet-tile-pane { filter:grayscale(0.85) contrast(0.95) brightness(1.03); }
+@media (prefers-color-scheme: dark) { #confmap .leaflet-tile-pane { filter:invert(1) hue-rotate(180deg) grayscale(0.7) brightness(0.9); } }
 .leaflet-popup-content { font-family:Georgia,"Iowan Old Style",serif; font-size:0.9em; line-height:1.45; margin:10px 14px; }
 .leaflet-popup-content .pc-city { font:700 0.72em ui-monospace,Menlo,monospace; letter-spacing:0.12em; text-transform:uppercase; color:#8c2f39; margin-bottom:0.3em; }
 .leaflet-popup-content .pc-ev { margin:0.35em 0 0; }
@@ -45,8 +47,6 @@ li.ev.hl .when { color:var(--red); }
 # Conferences & Invited Talks
 
 <div class="ledger" id="ledger"></div>
-<div class="mapwrap"><div id="confmap" role="img" aria-label="Map of conference locations"></div><div class="mapctl"><button type="button" id="btn-play">Play journey</button><button type="button" id="btn-view">Show world</button></div></div>
-<p class="mapnote">Each pin is a host city (the number is how many events were held there). The dashed line follows the dated events in chronological order. Click a pin or an entry below to link them.</p>
 
 ## 2026
 
@@ -98,6 +98,11 @@ li.ev.hl .when { color:var(--red); }
 </li>
 </ul>
 
+## Map
+
+<div class="mapwrap"><div id="confmap" role="img" aria-label="Map of conference locations"></div><div class="mapctl"><button type="button" id="btn-play">Play journey</button><button type="button" id="btn-view">Show world</button></div></div>
+<p class="mapnote">Each pin is a host city (the number is how many events were held there). The dashed line follows the dated events in chronological order. Click a pin or an entry above to link them.</p>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function () {
@@ -119,7 +124,15 @@ li.ev.hl .when { color:var(--red); }
   if (!window.L) { document.getElementById('confmap').outerHTML = '<p class="mapnote">The map could not be loaded.</p>'; return; }
   var map = L.map('confmap', { scrollWheelZoom: false, worldCopyJump: true, zoomSnap: 0.25 });
   var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (dark ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap contributors &copy; CARTO', subdomains: 'abcd', maxZoom: 18, minZoom: 2 }).addTo(map);
+  var base = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18, minZoom: 2, referrerPolicy: 'origin' }).addTo(map);
+  var fails = 0;
+  base.on('tileerror', function () {
+    fails++;
+    if (fails === 4) {
+      map.removeLayer(base);
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles &copy; Esri', maxZoom: 16, minZoom: 2 }).addTo(map);
+    }
+  });
   map.on('click', function () { map.scrollWheelZoom.enable(); });
   var pins = {}, all = [];
   Object.keys(groups).forEach(function (c) {
