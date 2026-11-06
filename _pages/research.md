@@ -29,7 +29,7 @@ li.entry:hover::after { transform:scaleY(1); }
 @keyframes rpRise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
 .kicker { display:block; margin-bottom:0.3em; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.68em; letter-spacing:0.12em; text-transform:uppercase; color:var(--mut); }
 .kicker.pub { color:var(--red); font-weight:700; }
-.paper-title { font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; font-size:1.12em; font-weight:700; line-height:1.38; color:var(--ink); text-decoration:none !important; }
+.paper-title { display:block; font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; font-size:1.12em; font-weight:700; line-height:1.38; color:var(--ink); text-decoration:none !important; }
 a.paper-title:hover { color:var(--acc); text-decoration:underline !important; text-decoration-thickness:1px; text-underline-offset:4px; }
 .journal, .outlet { display:block; margin:0.25em 0 0.1em; font-family:Georgia,"Iowan Old Style",serif; font-size:0.95em; color:var(--acc); }
 .glo-link { display:inline-block; margin:0.45em 0.8em 0.1em 0; font-size:0.78em; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none !important; color:var(--acc); border-bottom:1px solid var(--acc); }
