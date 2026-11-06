@@ -6,7 +6,7 @@ author_profile: true
 ---
 {% include base_path %}
 <iframe 
-    src="/files/pdf/Curriculum_vitae_Sagnik_Kumar_Gupta.pdf" 
+    src="/files/pdf/CurriculumVitae_skg (10).pdf" 
     width="100%" 
     height="700" 
     frameborder="0" 
