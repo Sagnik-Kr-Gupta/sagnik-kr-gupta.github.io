@@ -11,9 +11,6 @@ h1[id] { position:relative; margin:0.5em 0 0.6em; padding-bottom:0.5em; font-fam
 h1[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem; height:3px; background:var(--acc); }
 h2[id] { display:flex; align-items:center; gap:0.8em; margin:2.2em 0 0.4em; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:1.05em; font-weight:700; letter-spacing:0.1em; color:var(--acc); }
 h2[id]::after { content:""; flex:1; height:1px; background:var(--rule); }
-.ledger { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.78em; letter-spacing:0.02em; color:var(--mut); margin:0.4em 0 0.9em; padding:0.7em 0; border-top:2px solid var(--ink); border-bottom:1px solid var(--rule); }
-.ledger b { color:var(--ink); font-size:1.25em; margin-right:0.3em; }
-.ledger span + span::before { content:"/"; margin:0 0.9em; opacity:0.45; }
 .mapwrap { position:relative; }
 #confmap { height:440px; border:1px solid var(--rule); border-radius:2px; background:var(--acc-soft); z-index:0; }
 .mapctl { position:absolute; right:10px; top:10px; z-index:500; display:flex; flex-direction:column; gap:6px; }
@@ -45,8 +42,6 @@ li.ev.hl .when { color:var(--red); }
 </style>
 
 # Conferences & Invited Talks
-
-<div class="ledger" id="ledger"></div>
 
 ## 2026
 
@@ -112,11 +107,6 @@ li.ev.hl .when { color:var(--red); }
   var dated = items.filter(function (li) { return li.getAttribute('data-start'); }).sort(function (a, b) { return a.getAttribute('data-start') < b.getAttribute('data-start') ? -1 : 1; });
   var seq = [];
   dated.forEach(function (li) { var c = li.getAttribute('data-city'); if (seq[seq.length - 1] !== c) { seq.push(c); } });
-  var years = {};
-  items.forEach(function (li) { years[li.getAttribute('data-year')] = 1; });
-  var ledger = document.getElementById('ledger');
-  var stats = [[items.length, 'events'], [Object.keys(groups).length, 'cities'], [Object.keys(years).length, 'years']];
-  stats.forEach(function (s) { var sp = document.createElement('span'); sp.innerHTML = '<b>' + s[0] + '</b>' + s[1]; ledger.appendChild(sp); });
   if (!window.L) { document.getElementById('confmap').outerHTML = '<p class="mapnote">The map could not be loaded.</p>'; return; }
   var map = L.map('confmap', { scrollWheelZoom: false, worldCopyJump: true, zoomSnap: 0.25 });
   var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
