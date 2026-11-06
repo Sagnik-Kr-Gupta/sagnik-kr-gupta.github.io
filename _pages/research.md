@@ -3,21 +3,26 @@ permalink: /research/
 title: ""
 ---
 
+# Peer-reviewed Publications
+
+* <a href="https://link.springer.com/article/10.1007/s11150-026-09887-5" class="paper-title">
+Rewiring Gender Norms: Causal Evidence on Internet Exposure and Justification of Intimate Partner Violence
+</a>  
+<span class="journal"><em>Review of Economics of the Household</em>, 2026</span>  
+<a href="https://www.econstor.eu/handle/10419/333329" class="glo-link">GLO Discussion Paper</a>  
+<span class="authors">
+with <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>,
+Sagnik Kumar Gupta and
+<a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a>
+</span>
+
+
 # Working Papers
 
 * <a href="https://www.econstor.eu/handle/10419/331320" class="paper-title">
 The Protective Power of Connectivity: Internet Exposure and Intimate Partner Violence
 </a>  
 <a href="/files/pdf/GLO-DP-1690.pdf" class="glo-link">GLO Discussion Paper</a>  
-<span class="authors">
-with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
-<a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
-</span>
-
-* <a href="https://www.econstor.eu/handle/10419/333329" class="paper-title">
-Rewiring Gender Norms: Causal Evidence on Internet Exposure and Justification of Intimate Partner Violence
-</a>  
-<a href="/files/pdf/GLO-DP-1696.pdf" class="glo-link">GLO Discussion Paper</a>  
 <span class="authors">
 with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
 <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
@@ -68,6 +73,15 @@ Causal Impact of Internet Exposure on Period Products Usage in India
 </span>  
 <span class="glo-link">Work in Progress</span>  
 <span class="authors">
+
+---
+
+# Other Publications
+
+<!-- Add entries here, using the same format as above -->
+
+---
+
 with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and
 <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a>
 </span>
