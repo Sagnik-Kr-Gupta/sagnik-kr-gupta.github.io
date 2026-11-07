@@ -4,39 +4,47 @@ title: ""
 ---
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root { --ink:#1c2733; --acc:#1f5c5a; --acc-soft:rgba(31,92,90,0.07); --red:#8c2f39; --rule:rgba(28,39,51,0.2); --mut:#5b6672; }
-@media (prefers-color-scheme: dark) { :root { --ink:#e6eaee; --acc:#79c2ba; --acc-soft:rgba(121,194,186,0.09); --red:#e48c96; --rule:rgba(255,255,255,0.2); --mut:#9aa5b1; } }
-h1[id] { position:relative; margin:0.5em 0 0.6em; padding-bottom:0.5em; font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; font-size:1.05em; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--rule); }
+:root { --head:"Merriweather",Georgia,serif; --text:"Lora",Georgia,serif; --ui:"Inter","Open Sans",system-ui,sans-serif;
+  --ink:#1b2430; --acc:#0f6b66; --acc-soft:rgba(15,107,102,0.09); --red:#a02a3a; --rule:rgba(20,30,45,0.28); --mut:#4f5d6b; --on-acc:#fff; }
+@media (prefers-color-scheme: dark) { :root { --ink:#eef2f6; --acc:#6fd6c9; --acc-soft:rgba(111,214,201,0.10); --red:#f4a3b0; --rule:rgba(255,255,255,0.24); --mut:#aab6c3; --on-acc:#0b1318; } }
+:root[data-hp="light"] { --ink:#1b2430; --acc:#0f6b66; --acc-soft:rgba(15,107,102,0.09); --red:#a02a3a; --rule:rgba(20,30,45,0.28); --mut:#4f5d6b; --on-acc:#fff; }
+:root[data-hp="dark"] { --ink:#eef2f6; --acc:#6fd6c9; --acc-soft:rgba(111,214,201,0.10); --red:#f4a3b0; --rule:rgba(255,255,255,0.24); --mut:#aab6c3; --on-acc:#0b1318; }
+h1[id] { position:relative; margin:0.5em 0 0.6em; padding-bottom:0.5em; font-family:var(--head); font-size:1.05em; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--rule); }
 h1[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem; height:3px; background:var(--acc); }
-h2[id] { display:flex; align-items:center; gap:0.8em; margin:2.2em 0 0.4em; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:1.05em; font-weight:700; letter-spacing:0.1em; color:var(--acc); }
+h2[id] { display:flex; align-items:center; gap:0.8em; margin:2.2em 0 0.4em; font-family:var(--ui); font-size:1.05em; font-weight:700; letter-spacing:0.1em; color:var(--acc); }
 h2[id]::after { content:""; flex:1; height:1px; background:var(--rule); }
 .mapwrap { position:relative; }
 #confmap { height:440px; border:1px solid var(--rule); border-radius:2px; background:var(--acc-soft); z-index:0; }
 .mapctl { position:absolute; right:10px; top:10px; z-index:500; display:flex; flex-direction:column; gap:6px; }
-.mapctl button { font:inherit; font-size:0.74em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; padding:0.5em 0.9em; color:var(--acc); background:rgba(255,255,255,0.92); border:1px solid var(--acc); border-radius:2px; transition:background 0.2s,color 0.2s; }
-.mapctl button:hover, .mapctl button.on { background:var(--acc); color:#fff; }
+.mapctl button { font:inherit; font-size:0.74em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; padding:0.5em 0.9em; color:#0f6b66; background:rgba(255,255,255,0.94); border:1px solid #0f6b66; border-radius:2px; transition:background 0.2s,color 0.2s; }
+.mapctl button:hover, .mapctl button.on { background:#0f6b66; color:#fff; }
 .mapnote { margin:0.5em 0 0; font-size:0.78em; font-style:italic; color:var(--mut); }
-.pin { position:relative; width:30px; height:30px; border-radius:50%; background:var(--acc); border:2px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,0.35); color:#fff; display:flex; align-items:center; justify-content:center; font:700 12px ui-monospace,Menlo,monospace; transition:transform 0.2s ease,background 0.2s ease; }
+.pin { position:relative; width:30px; height:30px; border-radius:50%; background:var(--acc); border:2px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,0.35); color:var(--on-acc); display:flex; align-items:center; justify-content:center; font:700 12px Inter,Menlo,monospace; transition:transform 0.2s ease,background 0.2s ease; }
 .pin::before { content:""; position:absolute; inset:-2px; border-radius:50%; border:2px solid var(--acc); opacity:0; }
 .pin.on { background:var(--red); transform:scale(1.25); }
 .pin.on::before { border-color:var(--red); animation:pinPulse 1.2s ease-out infinite; }
 @keyframes pinPulse { from { transform:scale(1); opacity:0.8; } to { transform:scale(2.2); opacity:0; } }
 #confmap .leaflet-tile-pane { filter:grayscale(0.85) contrast(0.95) brightness(1.03); }
-@media (prefers-color-scheme: dark) { #confmap .leaflet-tile-pane { filter:invert(1) hue-rotate(180deg) grayscale(0.7) brightness(0.9); } }
-.leaflet-popup-content { font-family:Georgia,"Iowan Old Style",serif; font-size:0.9em; line-height:1.45; margin:10px 14px; }
-.leaflet-popup-content .pc-city { font:700 0.72em ui-monospace,Menlo,monospace; letter-spacing:0.12em; text-transform:uppercase; color:#8c2f39; margin-bottom:0.3em; }
+@media (prefers-color-scheme: dark) { :root:not([data-hp="light"]) #confmap .leaflet-tile-pane { filter:invert(1) hue-rotate(180deg) grayscale(0.7) brightness(0.9); } }
+@media all { :root[data-hp="dark"] #confmap .leaflet-tile-pane { filter:invert(1) hue-rotate(180deg) grayscale(0.7) brightness(0.9); } :root[data-hp="light"] #confmap .leaflet-tile-pane { filter:grayscale(0.85) contrast(0.95) brightness(1.03); } }
+.leaflet-popup-content { font-family:"Lora",Georgia,serif; font-size:0.9em; line-height:1.45; margin:10px 14px; }
+.leaflet-popup-content .pc-city { font:700 0.72em Inter,sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#a02a3a; margin-bottom:0.3em; }
 .leaflet-popup-content .pc-ev { margin:0.35em 0 0; }
-.leaflet-popup-content .pc-ev i { display:block; font-style:normal; font:0.78em ui-monospace,Menlo,monospace; color:#5b6672; }
+.leaflet-popup-content .pc-ev i { display:block; font-style:normal; font:600 0.74em Inter,sans-serif; color:#4f5d6b; }
 ul.events { list-style:none; margin:0; padding:0; }
 li.ev { display:grid; grid-template-columns:8.5em 1fr; gap:0 1.2em; padding:0.95em 0.6em 0.9em; border-bottom:1px solid var(--rule); cursor:pointer; transition:background 0.25s ease,padding-left 0.25s ease; animation:evRise 0.5s ease both; }
 li.ev:hover, li.ev.hl { background:var(--acc-soft); padding-left:1em; }
 li.ev.hl .when { color:var(--red); }
 @keyframes evRise { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-.when { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.8em; color:var(--acc); padding-top:0.2em; }
+.when { font-family:var(--ui); font-size:0.8em; color:var(--acc); padding-top:0.2em; }
 .when.tba { color:var(--mut); font-style:italic; }
-.what b { font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; font-size:1.02em; line-height:1.4; color:var(--ink); }
-.where { display:block; margin-top:0.2em; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.68em; letter-spacing:0.12em; text-transform:uppercase; color:var(--mut); }
+.what { font-family:var(--text); }
+.what b { font-family:var(--head); font-size:1.02em; line-height:1.4; color:var(--ink); }
+.where { display:block; margin-top:0.55em; padding-top:0.45em; border-top:1px solid var(--rule); font-family:var(--ui); font-size:0.68em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--acc); }
 @media (max-width:600px) { li.ev { grid-template-columns:1fr; } .when { padding-bottom:0.2em; } #confmap { height:340px; } }
 @media (prefers-reduced-motion: reduce) { li.ev, .pin::before { animation:none !important; } }
 </style>
@@ -97,6 +105,17 @@ li.ev.hl .when { color:var(--red); }
 
 <div class="mapwrap"><div id="confmap" role="img" aria-label="Map of conference locations"></div><div class="mapctl"><button type="button" id="btn-play">Play journey</button><button type="button" id="btn-view">Show world</button></div></div>
 
+<script>
+(function(){
+  function lum(c){var m=c.match(/[\d.]+/g);if(!m||(m.length>3&&+m[3]===0))return null;return (0.299*m[0]+0.587*m[1]+0.114*m[2])/255;}
+  function sync(){var el=document.body,c=null;while(el){c=getComputedStyle(el).backgroundColor;if(lum(c)!==null)break;el=el.parentElement;}
+    var l=lum(c||'');if(l!==null)document.documentElement.setAttribute('data-hp',l<0.5?'dark':'light');}
+  sync();
+  try{new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['class','data-theme']});}catch(e){}
+  document.addEventListener('click',function(){setTimeout(sync,60);});
+  if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){setTimeout(sync,60);});
+})();
+</script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function () {
