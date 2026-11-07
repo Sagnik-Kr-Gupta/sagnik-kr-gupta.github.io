@@ -8,13 +8,20 @@ redirect_from:
   - /home.html
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root { --ink:#1c2733; --acc:#1f5c5a; --acc-soft:rgba(31,92,90,0.07); --red:#8c2f39; --rule:rgba(28,39,51,0.2); --mut:#5b6672; }
-@media (prefers-color-scheme: dark) { :root { --ink:#e6eaee; --acc:#79c2ba; --acc-soft:rgba(121,194,186,0.09); --red:#e48c96; --rule:rgba(255,255,255,0.2); --mut:#9aa5b1; } }
-.kicker { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.72em; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); font-weight:700; margin:0 0 0.4em; }
-.lead { font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; font-size:1.55em; line-height:1.3; font-weight:700; color:var(--ink); margin:0 0 0.8em; }
-.lead em { font-style:normal; background:linear-gradient(transparent 62%,var(--acc-soft) 62%); box-shadow:inset 0 -2px 0 var(--acc); }
-h2[id] { position:relative; display:flex; align-items:center; gap:0.8em; margin:2.4em 0 0.9em; padding-bottom:0.45em; font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; font-size:1em; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--rule); }
+:root { --head:"Merriweather",Georgia,serif; --text:"Lora",Georgia,serif; --ui:"Inter","Open Sans",system-ui,sans-serif;
+  --ink:#1b2430; --acc:#0f6b66; --acc-soft:rgba(15,107,102,0.09); --red:#a02a3a; --rule:rgba(20,30,45,0.28); --mut:#4f5d6b; --on-acc:#fff; --glow:160,42,58; }
+@media (prefers-color-scheme: dark) { :root { --ink:#eef2f6; --acc:#6fd6c9; --acc-soft:rgba(111,214,201,0.10); --red:#f4a3b0; --rule:rgba(255,255,255,0.24); --mut:#aab6c3; --on-acc:#0b1318; --glow:244,163,176; } }
+:root[data-hp="light"] { --ink:#1b2430; --acc:#0f6b66; --acc-soft:rgba(15,107,102,0.09); --red:#a02a3a; --rule:rgba(20,30,45,0.28); --mut:#4f5d6b; --on-acc:#fff; --glow:160,42,58; }
+:root[data-hp="dark"] { --ink:#eef2f6; --acc:#6fd6c9; --acc-soft:rgba(111,214,201,0.10); --red:#f4a3b0; --rule:rgba(255,255,255,0.24); --mut:#aab6c3; --on-acc:#0b1318; --glow:244,163,176; }
+.chip, .copy { font-family:var(--ui); }
+.bio { font-family:var(--text); line-height:1.7; color:var(--ink); }
+.bio strong { font-family:var(--head); font-weight:700; }
+.kicker { font-family:var(--ui); font-size:0.72em; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); font-weight:700; margin:0 0 0.4em; }
+h2[id] { position:relative; display:flex; align-items:center; gap:0.8em; margin:2.4em 0 0.9em; padding-bottom:0.45em; font-family:var(--head); font-size:1em; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--rule); }
 h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem; height:3px; background:var(--acc); }
 .hint { font-size:0.82em; font-style:italic; color:var(--mut); margin:-0.4em 0 0.9em; }
 .timeline { list-style:none; margin:0; padding:0 0 0 1.6em; position:relative; }
@@ -25,18 +32,18 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
 .timeline li:hover { background:var(--acc-soft); }
 .timeline li:hover::before { background:var(--acc); transform:scale(1.25); }
 .timeline li.now::before { background:var(--red); border-color:var(--red); animation:tlPulse 1.8s ease-out infinite; }
-@keyframes tlPulse { 0% { box-shadow:0 0 0 0 rgba(140,47,57,0.45); } 100% { box-shadow:0 0 0 10px rgba(140,47,57,0); } }
-.tl-year { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.74em; letter-spacing:0.1em; color:var(--acc); }
-.tl-what { display:block; font-family:Georgia,"Iowan Old Style",serif; font-weight:700; color:var(--ink); }
-.tl-where { display:block; font-size:0.9em; color:var(--mut); }
+@keyframes tlPulse { 0% { box-shadow:0 0 0 0 rgba(var(--glow),0.45); } 100% { box-shadow:0 0 0 10px rgba(var(--glow),0); } }
+.tl-year { font-family:var(--ui); font-size:0.74em; letter-spacing:0.1em; color:var(--acc); }
+.tl-what { display:block; font-family:var(--head); font-weight:700; color:var(--ink); }
+.tl-where { display:block; font-family:var(--text); font-size:0.9em; color:var(--mut); }
 .chips { display:flex; flex-wrap:wrap; gap:0.5em; margin:0 0 0.6em; }
 .chip { font:inherit; font-size:0.88em; cursor:pointer; padding:0.4em 0.9em; color:var(--ink); background:transparent; border:1px solid var(--rule); border-radius:2px; transition:all 0.2s ease; }
 .chip:hover { border-color:var(--acc); color:var(--acc); transform:translateY(-2px); }
-.chip[aria-pressed="true"] { background:var(--acc); border-color:var(--acc); color:#fff; }
+.chip[aria-pressed="true"] { background:var(--acc); border-color:var(--acc); color:var(--on-acc); }
 .chip:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
-.related { min-height:3.2em; margin:0.4em 0 0; padding:0.8em 1.1em; border-left:3px solid var(--acc); background:var(--acc-soft); font-family:Georgia,"Iowan Old Style",serif; font-size:0.93em; line-height:1.6; }
+.related { min-height:3.2em; margin:0.4em 0 0; padding:0.8em 1.1em; border-left:3px solid var(--acc); background:var(--acc-soft); font-family:var(--text); font-size:0.93em; line-height:1.6; }
 .related.empty { color:var(--mut); font-style:italic; }
-.related .rl-h { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.72em; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); margin-bottom:0.4em; }
+.related .rl-h { font-family:var(--ui); font-size:0.72em; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); margin-bottom:0.4em; }
 .related ul { margin:0; padding-left:1.1em; }
 .related a { color:var(--acc); text-decoration:none; border-bottom:1px dotted var(--acc); }
 .related a:hover { color:var(--ink); }
@@ -45,24 +52,22 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
 .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:0.9em; }
 .stat { padding:0.9em 1em 0.8em; border:1px solid var(--rule); border-top:3px solid var(--acc); border-radius:2px; transition:transform 0.25s ease,border-color 0.25s ease,background 0.25s ease; }
 .stat:hover { transform:translateY(-4px); border-color:var(--acc); background:var(--acc-soft); }
-.stat .num { font-family:Georgia,"Iowan Old Style",serif; font-size:2.1em; font-weight:700; line-height:1; color:var(--ink); }
+.stat .num { font-family:var(--head); font-size:2.1em; font-weight:700; line-height:1; color:var(--ink); }
 .stat .num small { font-size:0.42em; margin-left:0.25em; letter-spacing:0.08em; color:var(--acc); }
-.stat .txt { margin:0.5em 0 0.3em; font-size:0.84em; line-height:1.4; }
-.stat .src { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.66em; letter-spacing:0.06em; text-transform:uppercase; color:var(--mut); }
+.stat .txt { font-family:var(--text); margin:0.5em 0 0.3em; font-size:0.84em; line-height:1.4; }
+.stat .src { font-family:var(--ui); font-size:0.66em; letter-spacing:0.06em; text-transform:uppercase; color:var(--mut); }
 .contact { display:flex; flex-direction:column; gap:0.6em; }
 .mail { display:flex; align-items:center; flex-wrap:wrap; gap:0.7em; }
-.mail a { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.9em; color:var(--acc); text-decoration:none; border-bottom:1px solid var(--acc); }
+.mail a { font-family:var(--ui); font-size:0.9em; color:var(--acc); text-decoration:none; border-bottom:1px solid var(--acc); }
 .mail a:hover { color:var(--ink); border-bottom-color:var(--ink); }
 .copy { font:inherit; font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; padding:0.3em 0.8em; color:var(--acc); background:transparent; border:1px solid var(--acc); border-radius:2px; transition:all 0.2s; }
-.copy:hover, .copy.ok { background:var(--acc); color:#fff; }
+.copy:hover, .copy.ok { background:var(--acc); color:var(--on-acc); }
 @media (prefers-reduced-motion: reduce) { .timeline::after, .related.fade, .timeline li.now::before { animation:none !important; transition:none !important; } .stat, .chip { transition:none; } }
 </style>
 
 <p class="kicker">Welcome to my website</p>
 
-<p class="lead">How does <em>internet access</em> change women’s attitudes and behaviour?</p>
-
-I am a **Ph.D. scholar in Development Studies** in the Department of Liberal Arts at the **Indian Institute of Technology Hyderabad (IITH)**, India. My current research focuses on the **causal impact of internet access on women's attitudes and behaviour**. My doctoral thesis studies these aspects in the context of India.
+<p class="bio">I am a <strong>Ph.D. scholar in Development Studies</strong> in the Department of Liberal Arts at the <strong>Indian Institute of Technology Hyderabad (IITH)</strong>, India. My current research focuses on the <strong>causal impact of internet access on women's attitudes and behaviour</strong>. My doctoral thesis studies these aspects in the context of India.</p>
 
 ## Education
 
@@ -131,9 +136,19 @@ I am a **Ph.D. scholar in Development Studies** in the Department of Liberal Art
   });
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var tl = document.getElementById('timeline');
+  function lum(c){var m=c.match(/[\d.]+/g);if(!m||(m.length>3&&+m[3]===0))return null;return (0.299*m[0]+0.587*m[1]+0.114*m[2])/255;}
+  function sync(){
+    var el=document.body,c=null;
+    while(el){c=getComputedStyle(el).backgroundColor;if(lum(c)!==null)break;el=el.parentElement;}
+    var l=lum(c||'');
+    if(l!==null)document.documentElement.setAttribute('data-hp',l<0.5?'dark':'light');
+    if(tl)tl.style.setProperty('--bgc',(l!==null)?c:'#fff');
+  }
+  sync();
+  try{new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['class','data-theme']});}catch(e){}
+  document.addEventListener('click',function(){setTimeout(sync,60);});
+  if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){setTimeout(sync,60);});
   if (tl) {
-    var bg = getComputedStyle(document.body).backgroundColor;
-    tl.style.setProperty('--bgc', (bg && bg !== 'rgba(0, 0, 0, 0)') ? bg : '#fff');
     if ('IntersectionObserver' in window && !reduce) {
       var o1 = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { tl.style.setProperty('--fill', '100%'); o1.disconnect(); } }, { threshold: 0.3 });
       o1.observe(tl);
