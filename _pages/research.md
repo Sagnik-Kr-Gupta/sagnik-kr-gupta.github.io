@@ -51,6 +51,7 @@ li.entry:hover::before { color:var(--acc); }
 li.entry:hover::after { transform:scaleY(1); }
 @keyframes rpRise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
 .kicker { display:block; margin-bottom:0.3em; font-family:var(--ui);font-variant-numeric:tabular-nums; font-size:0.68em; letter-spacing:0.12em; text-transform:uppercase; color:var(--mut); }
+.status { display:inline-block; margin-left:0.6em; padding:0.1em 0.6em; font-weight:700; letter-spacing:0.1em; color:var(--acc); border:1px solid var(--acc); border-radius:2px; background:var(--acc-soft); vertical-align:1px; }
 .kicker.pub { color:var(--red); font-weight:700; }
 .paper-title { display:block; font-family:var(--head); font-size:1.04em; font-weight:700; line-height:1.5; color:var(--ink); text-decoration:none !important; }
 a.paper-title:hover { color:var(--acc); text-decoration:underline !important; text-decoration-thickness:1px; text-underline-offset:4px; }
@@ -111,7 +112,7 @@ details.abstract[open] .abstract-text { animation:rpRise 0.3s ease; }
 
 <ul class="papers">
 <li class="entry" data-id="protective" data-method="iv" data-data="nfhs">
-<span class="kicker">Working Paper · GLO DP 1690</span>
+<span class="kicker">Working Paper · GLO DP 1690 <span class="status">Under review</span></span>
 <a href="https://www.econstor.eu/handle/10419/331320" class="paper-title">The Protective Power of Connectivity: Internet Exposure and Intimate Partner Violence</a>
 <a href="/files/pdf/GLO-DP-1690.pdf" class="glo-link">GLO Discussion Paper</a>
 <span class="authors">with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a></span>
@@ -122,7 +123,7 @@ details.abstract[open] .abstract-text { animation:rpRise 0.3s ease; }
 </details>
 </li>
 <li class="entry" data-id="banking" data-method="iv" data-data="">
-<span class="kicker">Working Paper · GLO DP 1697</span>
+<span class="kicker">Working Paper · GLO DP 1697 <span class="status">Under review</span></span>
 <a href="https://www.econstor.eu/handle/10419/333697" class="paper-title">Banking on Connectivity: Internet Exposure and Women’s Financial Autonomy</a>
 <a href="/files/pdf/GLO-DP-1697.pdf" class="glo-link">GLO Discussion Paper</a>
 <span class="authors">with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a></span>
@@ -133,7 +134,7 @@ details.abstract[open] .abstract-text { animation:rpRise 0.3s ease; }
 </details>
 </li>
 <li class="entry" data-id="knot" data-method="iv" data-data="nfhs">
-<span class="kicker">Working Paper · SSRN</span>
+<span class="kicker">Working Paper · SSRN <span class="status">Under review</span></span>
 <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6257379" class="paper-title">Knot Too Early: The Causal Impact of Women's Age at Marriage on Period Product Use</a>
 <a href="/files/pdf/ssrn-6257379.pdf" class="glo-link">Working Paper</a>
 <span class="authors">with <a href="https://sites.google.com/iima.ac.in/karan-babbar/home">Dr. Karan Babbar</a> and <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a></span>
@@ -144,7 +145,7 @@ details.abstract[open] .abstract-text { animation:rpRise 0.3s ease; }
 </details>
 </li>
 <li class="entry" data-id="liquor" data-method="did" data-data="hces">
-<span class="kicker">Working Paper · Policy Edge 2026-0001</span>
+<span class="kicker">Working Paper · Policy Edge 2026-0001 <span class="status">Under review</span></span>
 <a href="https://www.policyedge.in/working-paper/wp-from-liquor-to-lpg-spillover-effects-of-alcohol-prohibition-on-clean-fuel-adoption" class="paper-title">From Liquor to LPG: Spillover effects of alcohol prohibition on clean fuel adoption</a>
 <a href="/files/pdf/TPE_WP_2026-0001.pdf" class="glo-link">Policy Edge Working Paper</a>
 <span class="authors">with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a></span>
