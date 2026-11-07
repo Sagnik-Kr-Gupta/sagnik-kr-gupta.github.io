@@ -55,7 +55,7 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
 .stat .num { font-family:var(--head); font-size:2.1em; font-weight:700; line-height:1; color:var(--ink); }
 .stat .num small { font-size:0.42em; margin-left:0.25em; letter-spacing:0.08em; color:var(--acc); }
 .stat .txt { font-family:var(--text); margin:0.5em 0 0.3em; font-size:0.84em; line-height:1.4; }
-.stat .src { font-family:var(--ui); font-size:0.66em; letter-spacing:0.06em; text-transform:uppercase; color:var(--mut); }
+.stat .src { display:block; margin-top:0.7em; padding-top:0.6em; border-top:1px solid var(--rule); font-family:var(--ui); font-size:0.68em; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--acc); }
 .contact { display:flex; flex-direction:column; gap:0.6em; }
 .mail { display:flex; align-items:center; flex-wrap:wrap; gap:0.7em; }
 .mail a { font-family:var(--ui); font-size:0.9em; color:var(--acc); text-decoration:none; border-bottom:1px solid var(--acc); }
