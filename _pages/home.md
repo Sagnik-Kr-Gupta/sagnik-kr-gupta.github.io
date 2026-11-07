@@ -62,7 +62,12 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
 .mail a:hover { color:var(--ink); border-bottom-color:var(--ink); }
 .copy { font:inherit; font-size:0.72em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; padding:0.3em 0.8em; color:var(--acc); background:transparent; border:1px solid var(--acc); border-radius:2px; transition:all 0.2s; }
 .copy:hover, .copy.ok { background:var(--acc); color:var(--on-acc); }
-@media (prefers-reduced-motion: reduce) { .timeline::after, .related.fade, .timeline li.now::before { animation:none !important; transition:none !important; } .stat, .chip { transition:none; } }
+#hp-progress { position:fixed; top:0; left:0; height:3px; width:100%; z-index:99999; background:var(--acc); transform-origin:0 50%; transform:scaleX(0); pointer-events:none; }
+.rv { opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.rv.in { opacity:1; transform:none; }
+.views { margin:1.6em 0 0; font-family:var(--ui); font-size:0.72em; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--mut); }
+.views b { color:var(--acc); font-size:1.15em; letter-spacing:0.04em; margin-left:0.4em; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity:1 !important; transform:none !important; transition:none !important; } .timeline::after, .related.fade, .timeline li.now::before { animation:none !important; transition:none !important; } .stat, .chip { transition:none; } }
 </style>
 
 <p class="kicker">Welcome to my website</p>
@@ -108,6 +113,10 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
 <div class="mail"><a href="mailto:sagnikkumargupta00@gmail.com">sagnikkumargupta00@gmail.com</a><button type="button" class="copy" data-m="sagnikkumargupta00@gmail.com">Copy</button></div>
 </div>
 
+<p class="views" id="views" hidden>Total views<b id="views-n"></b></p>
+
+<div id="hp-progress" aria-hidden="true"></div>
+
 <script>
 (function () {
   var RELATED = {
@@ -135,6 +144,29 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
     });
   });
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* reading progress */
+  var bar = document.getElementById('hp-progress');
+  function prog() {
+    var h = document.documentElement, max = Math.max(h.scrollHeight, document.body.scrollHeight) - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, (window.pageYOffset || h.scrollTop) / max) : 0) + ')';
+  }
+  window.addEventListener('scroll', prog, { passive: true });
+  window.addEventListener('resize', prog);
+  prog();
+  /* scroll reveal */
+  if ('IntersectionObserver' in window && !reduce) {
+    var rvs = Array.prototype.slice.call(document.querySelectorAll('h2[id], .timeline, .chips, .related, .stats, .contact, .views'));
+    var ro = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    rvs.forEach(function (el) { el.classList.add('rv'); ro.observe(el); });
+  }
+  /* total views (GoatCounter public counter) */
+  try {
+    fetch('https://sagnik.goatcounter.com/counter/TOTAL.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.count) { document.getElementById('views-n').textContent = d.count; document.getElementById('views').hidden = false; }
+    }).catch(function () {});
+  } catch (e) {}
   var tl = document.getElementById('timeline');
   function lum(c){var m=c.match(/[\d.]+/g);if(!m||(m.length>3&&+m[3]===0))return null;return (0.299*m[0]+0.587*m[1]+0.114*m[2])/255;}
   function sync(){
