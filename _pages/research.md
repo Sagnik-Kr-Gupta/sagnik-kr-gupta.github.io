@@ -314,6 +314,7 @@ details.abstract[open] .abstract-text { animation:rpRise 0.3s ease; }
     banking: { type: 'report', authors: [['Gupta', 'Sagnik Kumar'], ['Ojha', 'Manini'], ['Dhamija', 'Gaurav']], title: 'Banking on connectivity: Internet exposure and women’s financial autonomy', year: 2025, series: 'GLO Discussion Paper', number: '1697', inst: 'Global Labor Organization (GLO)', url: 'https://www.econstor.eu/handle/10419/333697', key: 'gupta2025banking' },
     liquor: { type: 'report', authors: [['Dhamija', 'Gaurav'], ['Gupta', 'Sagnik Kumar'], ['Ojha', 'Manini']], title: 'From liquor to LPG: Spillover effects of alcohol prohibition on clean fuel adoption', year: 2026, series: 'The Policy Edge Working Paper', number: '2026-0001', inst: 'The Policy Edge', url: 'https://www.policyedge.in/working-paper/wp-from-liquor-to-lpg-spillover-effects-of-alcohol-prohibition-on-clean-fuel-adoption', key: 'dhamija2026liquor' },
     long: { type: 'report', authors: [['Sindhi', 'Reetika'], ['Dhamija', 'Gaurav'], ['Gupta', 'Sagnik Kumar']], title: 'The long shadow of communal violence: Childhood exposure and later-life mental health', year: 2026, series: 'SSRN Scholarly Paper', number: '7355444', inst: 'Social Science Research Network', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7355444', key: 'sindhi2026long' }
+    ,opinion: { type: 'web', authors: [['Gupta', 'Sagnik Kumar'], ['Dhamija', 'Gaurav'], ['Ojha', 'Manini']], title: 'How digital access can change domestic violence', year: 2026, date: 'September 19', site: 'The Policy Edge', url: 'https://www.policyedge.in/p/how-digital-access-can-change-domestic-violence', key: 'gupta2026digital' }
   };
   function initials(f) { return f.split(' ').map(function (w) { return w.charAt(0) + '.'; }).join(' '); }
   function apaNames(a) {
@@ -321,12 +322,14 @@ details.abstract[open] .abstract-text { animation:rpRise 0.3s ease; }
     return n.length < 2 ? n[0] : n.slice(0, -1).join(', ') + ', & ' + n[n.length - 1];
   }
   function apa(c) {
+    if (c.type === 'web') { return apaNames(c.authors) + ' (' + c.year + ', ' + c.date + '). ' + c.title + '. ' + c.site + '. ' + c.url; }
     var s = apaNames(c.authors) + ' (' + c.year + '). ' + c.title + '. ';
     if (c.type === 'article') { return s + c.journal + '. https://doi.org/' + c.doi; }
     return s.replace(/\. $/, ' ') + '(' + c.series + ' No. ' + c.number + '). ' + c.inst + '. ' + c.url;
   }
   function bib(c) {
     var au = c.authors.map(function (x) { return x[0] + ', ' + x[1]; }).join(' and ');
+    if (c.type === 'web') { return '@misc{' + c.key + ',\n  author = {' + au + '},\n  title = {' + c.title + '},\n  year = {' + c.year + '},\n  month = {sep},\n  howpublished = {' + c.site + '},\n  url = {' + c.url + '}\n}'; }
     var f = ['  author = {' + au + '}', '  title = {' + c.title + '}', '  year = {' + c.year + '}'];
     if (c.type === 'article') { f.push('  journal = {' + c.journal + '}', '  doi = {' + c.doi + '}'); return '@article{' + c.key + ',\n' + f.join(',\n') + '\n}'; }
     f.push('  institution = {' + c.inst + '}', '  type = {' + c.series + '}', '  number = {' + c.number + '}', '  url = {' + c.url + '}');
