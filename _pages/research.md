@@ -74,19 +74,10 @@ details.abstract > summary:focus-visible { outline:2px solid var(--acc); outline
 details.abstract + details.abstract { margin-top:0.35em; }
 details.abstract .abstract-text { margin:0.7em 0 0.2em; padding:0.9em 1.2em; border-left:3px solid var(--acc); background:var(--acc-soft); font-family:var(--text); font-size:0.95em; line-height:1.75; text-align:justify; hyphens:auto; color:var(--ink); }
 details.abstract[open] .abstract-text { animation:rpRise 0.3s ease; }
-.jbox { text-align:left !important; }
-ol.journey { display:flex; align-items:flex-start; list-style:none; margin:0.2em 0 0.4em; padding:0; }
-ol.journey li.step { flex:0 0 auto; width:8em; text-align:center; font-size:0.86em; line-height:1.35; }
-ol.journey li.step i { display:block; width:0.9em; height:0.9em; margin:0 auto 0.45em; border-radius:50%; background:var(--acc); }
-ol.journey li.step.end i { background:var(--red); }
-ol.journey li.step b { display:block; font-family:var(--head); color:var(--ink); }
-ol.journey li.step span { display:block; font-family:var(--ui);font-variant-numeric:tabular-nums; font-size:0.78em; color:var(--mut); }
-ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4em; border-top:2px dashed var(--acc); text-align:center; font-family:var(--ui);font-variant-numeric:tabular-nums; font-size:0.7em; color:var(--acc); }
-.jtotal { margin:0.5em 0 0; font-size:0.84em; font-style:italic; color:var(--mut); }
 .actions { display:flex; flex-wrap:wrap; gap:0.5em; margin-top:0.8em; }
 .cite { font:inherit; font-size:0.7em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; padding:0.3em 0.8em; color:var(--acc); background:transparent; border:1px solid var(--acc); border-radius:2px; transition:all 0.2s ease; }
 .cite:hover, .cite.ok { background:var(--acc); color:var(--on-acc); }
-@media (max-width:600px) { li.entry { padding-left:2.4em; } .tools { width:100%; } #rp-search { flex:1; width:auto; } ol.journey { flex-direction:column; align-items:flex-start; } ol.journey li.step { width:auto; text-align:left; } ol.journey li.step i { margin:0 0 0.3em; } ol.journey li.dur { border-top:0; border-left:2px dashed var(--acc); margin:0.2em 0 0.2em 0.35em; padding:0.4em 0 0.4em 0.9em; text-align:left; min-width:0; } }
+@media (max-width:600px) { li.entry { padding-left:2.4em; } .tools { width:100%; } #rp-search { flex:1; width:auto; } }
 @media (prefers-reduced-motion: reduce) { li.entry, details.abstract .abstract-text { animation:none !important; } li.entry::after, li.entry { transition:none; } }
 </style>
 
@@ -112,21 +103,6 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 <details class="abstract">
 <summary>Abstract</summary>
 <div class="abstract-text">This paper evaluates the causal impact of women’s exposure to the internet on their attitudes towards intimate partner violence using data from the most recent round of the National Family Health Survey. To address potential endogeneity, we exploit exogenous variation in district-level mobile tower density in India as an instrument for women’s internet exposure. The instrumental variables estimation provides evidence that a woman’s exposure to internet reduces her likelihood of justifying intimate partner violence by 21 percentage points. The results are robust to an extensive set of individual, household, and district-level controls, alternative definitions of both the exposure and outcome variables, and a range of falsification tests. Sub-sample analyses reveal that the effect holds across social group, wealth, education, and geography, with particularly strong effects among women in non-poor households, with lower education, and in urban areas. We further provide suggestive evidence that internet exposure increases women’s employment, awareness, relaxes mobility constraints, and reduces husbands’ justification of intimate partner violence. It suggests that changes in both women’s opportunities and intra-household gender norms constitute potential pathways through which internet exposure reduces women’s justification of intimate partner violence. Overall, the findings highlight the transformative potential of digital connectivity in challenging regressive gender norms.</div>
-</details>
-<details class="abstract">
-<summary>Publication journey</summary>
-<div class="abstract-text jbox">
-<ol class="journey">
-<li class="step"><i></i><b>GLO Discussion Paper</b><span>No. 1696 · 2025</span></li>
-<li class="dur"></li>
-<li class="step"><i></i><b>Submitted</b><span>30 Dec 2025</span></li>
-<li class="dur">241 days in review</li>
-<li class="step"><i></i><b>Accepted</b><span>28 Aug 2026</span></li>
-<li class="dur">69 days to print</li>
-<li class="step end"><i></i><b>Published online</b><span>5 Nov 2026</span></li>
-</ol>
-<p class="jtotal">310 days from submission to publication online. Dates from the journal’s article page.</p>
-</div>
 </details>
 </li>
 </ul>
@@ -179,8 +155,8 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 </details>
 </li>
 <li class="entry" data-id="long" data-method="cohort" data-data="lasi">
-<span class="kicker">Working Paper</span>
-<a href="https://www.dropbox.com/scl/fo/oxivc59t7de1zea2rultr/AAiGN7QtmEX-5grNwKnrwrg?dl=0&amp;e=1&amp;preview=The+Long+Shadow+of+Communal+Violence.pdf&amp;rlkey=u8q14ur09l983r2v9dc9dj2sc" class="paper-title">The Long Shadow of Communal Violence: Childhood Exposure and Later-Life Mental Health</a>
+<span class="kicker">Working Paper · SSRN</span>
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7355444" class="paper-title">The Long Shadow of Communal Violence: Childhood Exposure and Later-Life Mental Health</a>
 <a href="/files/pdf/Childhood_Riot_Exposure_and_Mental_Health.pdf" class="glo-link">Working Paper</a>
 <span class="authors">with <a href="https://www.reetikasindhi.com">Reetika Sindhi</a> and <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a></span>
 <div class="tags"><button type="button" class="tag" data-f="method:cohort" aria-pressed="false">Cohort variation</button><span class="tag i">Riot records · 1950–1990</span><button type="button" class="tag" data-f="data:lasi" aria-pressed="false">LASI</button></div>
@@ -253,7 +229,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
   var entries = Array.prototype.slice.call(document.querySelectorAll('li.entry'));
   var heads = Array.prototype.slice.call(document.querySelectorAll('h1[id]'));
   var ledger = document.getElementById('ledger');
-  var labels = { 'peer-reviewed-publications': 'published', 'working-papers': 'working papers', 'work-in-progress': 'in progress', 'other-publications': 'other' };
+  var labels = { 'peer-reviewed-publications': ['published', 'published'], 'working-papers': ['working paper', 'working papers'], 'work-in-progress': ['in progress', 'in progress'], 'other-publications': ['other publication', 'other publications'] };
   entries.forEach(function (li) { li.__t = li.textContent.toLowerCase(); });
   heads.forEach(function (h) {
     var ul = h.nextElementSibling;
@@ -266,7 +242,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
     h.__ul = ul;
     if (ledger) {
       var s = document.createElement('span');
-      s.innerHTML = '<b>' + n + '</b>' + (labels[h.id] || h.textContent.toLowerCase());
+      var lb = labels[h.id]; s.innerHTML = '<b>' + n + '</b>' + (lb ? lb[n === 1 ? 0 : 1] : h.textContent.toLowerCase());
       ledger.appendChild(s);
     }
   });
@@ -335,7 +311,8 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
     rewiring: { type: 'article', authors: [['Ojha', 'Manini'], ['Gupta', 'Sagnik Kumar'], ['Dhamija', 'Gaurav']], title: 'Rewiring gender norms: Causal evidence on internet exposure and justification of intimate partner violence', year: 2026, journal: 'Review of Economics of the Household', doi: '10.1007/s11150-026-09887-5', key: 'ojha2026rewiring' },
     protective: { type: 'report', authors: [['Dhamija', 'Gaurav'], ['Gupta', 'Sagnik Kumar'], ['Ojha', 'Manini']], title: 'The protective power of connectivity: Internet exposure and intimate partner violence', year: 2025, series: 'GLO Discussion Paper', number: '1690', inst: 'Global Labor Organization (GLO)', url: 'https://www.econstor.eu/handle/10419/331320', key: 'dhamija2025protective' },
     banking: { type: 'report', authors: [['Gupta', 'Sagnik Kumar'], ['Ojha', 'Manini'], ['Dhamija', 'Gaurav']], title: 'Banking on connectivity: Internet exposure and women’s financial autonomy', year: 2025, series: 'GLO Discussion Paper', number: '1697', inst: 'Global Labor Organization (GLO)', url: 'https://www.econstor.eu/handle/10419/333697', key: 'gupta2025banking' },
-    liquor: { type: 'report', authors: [['Dhamija', 'Gaurav'], ['Gupta', 'Sagnik Kumar'], ['Ojha', 'Manini']], title: 'From liquor to LPG: Spillover effects of alcohol prohibition on clean fuel adoption', year: 2026, series: 'The Policy Edge Working Paper', number: '2026-0001', inst: 'The Policy Edge', url: 'https://www.policyedge.in/working-paper/wp-from-liquor-to-lpg-spillover-effects-of-alcohol-prohibition-on-clean-fuel-adoption', key: 'dhamija2026liquor' }
+    liquor: { type: 'report', authors: [['Dhamija', 'Gaurav'], ['Gupta', 'Sagnik Kumar'], ['Ojha', 'Manini']], title: 'From liquor to LPG: Spillover effects of alcohol prohibition on clean fuel adoption', year: 2026, series: 'The Policy Edge Working Paper', number: '2026-0001', inst: 'The Policy Edge', url: 'https://www.policyedge.in/working-paper/wp-from-liquor-to-lpg-spillover-effects-of-alcohol-prohibition-on-clean-fuel-adoption', key: 'dhamija2026liquor' },
+    long: { type: 'report', authors: [['Sindhi', 'Reetika'], ['Dhamija', 'Gaurav'], ['Gupta', 'Sagnik Kumar']], title: 'The long shadow of communal violence: Childhood exposure and later-life mental health', year: 2026, series: 'SSRN Scholarly Paper', number: '7355444', inst: 'Social Science Research Network', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7355444', key: 'sindhi2026long' }
   };
   function initials(f) { return f.split(' ').map(function (w) { return w.charAt(0) + '.'; }).join(' '); }
   function apaNames(a) {
@@ -345,7 +322,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
   function apa(c) {
     var s = apaNames(c.authors) + ' (' + c.year + '). ' + c.title + '. ';
     if (c.type === 'article') { return s + c.journal + '. https://doi.org/' + c.doi; }
-    return s + '(' + c.series + ' No. ' + c.number + '). ' + c.inst + '. ' + c.url;
+    return s.replace(/\. $/, ' ') + '(' + c.series + ' No. ' + c.number + '). ' + c.inst + '. ' + c.url;
   }
   function bib(c) {
     var au = c.authors.map(function (x) { return x[0] + ', ' + x[1]; }).join(' and ');
