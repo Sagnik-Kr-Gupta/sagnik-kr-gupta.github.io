@@ -67,7 +67,18 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
 .rv.in { opacity:1; transform:none; }
 .views { margin:1.6em 0 0; font-family:var(--ui); font-size:0.72em; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--mut); }
 .views b { color:var(--acc); font-size:1.15em; letter-spacing:0.04em; margin-left:0.4em; }
-@media (prefers-reduced-motion: reduce) { .rv { opacity:1 !important; transform:none !important; transition:none !important; } .timeline::after, .related.fade, .timeline li.now::before { animation:none !important; transition:none !important; } .stat, .chip { transition:none; } }
+.cloud { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:center; gap:0.35em 0.7em; padding:1.1em 0.5em; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.kw { font:inherit; font-family:var(--head); font-weight:700; line-height:1.25; cursor:pointer; padding:0.05em 0.3em; color:var(--ink); background:transparent; border:0; border-bottom:2px solid transparent; opacity:1; transition:transform 0.2s ease, color 0.2s ease, opacity 0.2s ease, border-color 0.2s ease; }
+.kw[data-w="1"] { font-size:0.88em; font-family:var(--text); font-weight:600; color:var(--mut); }
+.kw[data-w="2"] { font-size:1.12em; color:var(--acc); }
+.kw[data-w="3"] { font-size:1.4em; }
+.kw[data-w="4"] { font-size:1.75em; color:var(--acc); }
+.kw[data-w="6"] { font-size:2.05em; color:var(--red); }
+.kw:hover, .kw:focus-visible { transform:scale(1.18); opacity:1; border-bottom-color:currentColor; outline:none; }
+.kw[aria-pressed="true"] { opacity:1; border-bottom-color:var(--acc); color:var(--ink); background:var(--acc-soft); }
+.cloud.has-sel .kw[aria-pressed="false"] { opacity:0.6; }
+#kw-panel { margin-top:0.8em; }
+@media (prefers-reduced-motion: reduce) { .kw { transition:none; } .rv { opacity:1 !important; transform:none !important; transition:none !important; } .timeline::after, .related.fade, .timeline li.now::before { animation:none !important; transition:none !important; } .stat, .chip { transition:none; } }
 </style>
 
 <p class="kicker">Welcome to my website</p>
@@ -93,6 +104,31 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
 <button type="button" class="chip" data-k="political" aria-pressed="false">Political Economy</button>
 </div>
 <div class="related empty" id="related" aria-live="polite">Nothing selected yet.</div>
+
+## Keywords
+
+<p class="hint">Hover to enlarge. Click a keyword to see the papers it appears in.</p>
+
+<div class="cloud" id="cloud">
+<button type="button" class="kw" data-w="2" data-k="rp" aria-pressed="false">Intimate partner violence</button>
+<button type="button" class="kw" data-w="3" data-k="rpk" aria-pressed="false">NFHS-5</button>
+<button type="button" class="kw" data-w="1" data-k="r" aria-pressed="false">Gender norms</button>
+<button type="button" class="kw" data-w="6" data-k="all" aria-pressed="false">India</button>
+<button type="button" class="kw" data-w="1" data-k="l" aria-pressed="false">Alcohol prohibition</button>
+<button type="button" class="kw" data-w="4" data-k="rpbk" aria-pressed="false">Instrumental variables</button>
+<button type="button" class="kw" data-w="1" data-k="s" aria-pressed="false">Mental health</button>
+<button type="button" class="kw" data-w="3" data-k="rpb" aria-pressed="false">Internet exposure</button>
+<button type="button" class="kw" data-w="1" data-k="b" aria-pressed="false">Financial autonomy</button>
+<button type="button" class="kw" data-w="1" data-k="s" aria-pressed="false">Communal violence</button>
+<button type="button" class="kw" data-w="1" data-k="l" aria-pressed="false">Clean fuel</button>
+<button type="button" class="kw" data-w="1" data-k="k" aria-pressed="false">Menstrual hygiene</button>
+<button type="button" class="kw" data-w="1" data-k="l" aria-pressed="false">Difference-in-differences</button>
+<button type="button" class="kw" data-w="1" data-k="k" aria-pressed="false">Age at marriage</button>
+<button type="button" class="kw" data-w="1" data-k="s" aria-pressed="false">LASI</button>
+<button type="button" class="kw" data-w="1" data-k="s" aria-pressed="false">Cohort variation</button>
+<button type="button" class="kw" data-w="1" data-k="l" aria-pressed="false">HCES</button>
+</div>
+<div class="related empty" id="kw-panel" aria-live="polite">Nothing selected yet.</div>
 
 ## Findings at a Glance
 
@@ -144,6 +180,28 @@ h2[id]::after { content:""; position:absolute; left:0; bottom:-1px; width:3.2rem
     });
   });
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* keyword cloud */
+  var PAPERS = { r: 'Rewiring Gender Norms', p: 'The Protective Power of Connectivity', b: 'Banking on Connectivity', k: 'Knot Too Early', l: 'From Liquor to LPG', s: 'The Long Shadow of Communal Violence' };
+  var cloud = document.getElementById('cloud'), kwPanel = document.getElementById('kw-panel');
+  if (cloud && kwPanel) {
+    var kws = Array.prototype.slice.call(cloud.querySelectorAll('.kw'));
+    kws.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var already = b.getAttribute('aria-pressed') === 'true';
+        kws.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+        cloud.classList.remove('has-sel');
+        kwPanel.classList.remove('fade'); void kwPanel.offsetWidth;
+        if (already) { kwPanel.className = 'related empty'; kwPanel.textContent = 'Nothing selected yet.'; return; }
+        b.setAttribute('aria-pressed', 'true');
+        cloud.classList.add('has-sel');
+        var m = b.getAttribute('data-k'), ids = m === 'all' ? 'rpbkls' : m;
+        var html = '<div class="rl-h">Papers · ' + b.textContent + '</div><ul>';
+        ids.split('').forEach(function (c) { html += '<li><a href="/research/">' + PAPERS[c] + '</a></li>'; });
+        kwPanel.className = 'related fade';
+        kwPanel.innerHTML = html + '</ul>';
+      });
+    });
+  }
   /* reading progress */
   var bar = document.getElementById('hp-progress');
   function prog() {
