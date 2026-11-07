@@ -8,10 +8,14 @@ title: ""
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-:root { --ink:#eef2f6; --acc:#6fd6c9; --acc-soft:rgba(111,214,201,0.10); --red:#f4a3b0; --rule:rgba(255,255,255,0.24); --mut:#aab6c3; --head:"Merriweather",Georgia,serif; --text:"Lora",Georgia,serif; --ui:"Inter","Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.rp { --ink:#1b2430; --acc:#0f6b66; --acc-soft:rgba(15,107,102,0.09); --red:#a02a3a; --rule:rgba(20,30,45,0.28); --mut:#4f5d6b; --on-acc:#ffffff; --head:"Merriweather",Georgia,serif; --text:"Lora",Georgia,serif; --ui:"Inter","Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+@media (prefers-color-scheme: dark) { .rp { --ink:#eef2f6; --acc:#6fd6c9; --acc-soft:rgba(111,214,201,0.10); --red:#f4a3b0; --rule:rgba(255,255,255,0.24); --mut:#aab6c3; --on-acc:#0b1318; } }
+.rp[data-rp="light"] { --ink:#1b2430; --acc:#0f6b66; --acc-soft:rgba(15,107,102,0.09); --red:#a02a3a; --rule:rgba(20,30,45,0.28); --mut:#4f5d6b; --on-acc:#ffffff; }
+.rp[data-rp="dark"] { --ink:#eef2f6; --acc:#6fd6c9; --acc-soft:rgba(111,214,201,0.10); --red:#f4a3b0; --rule:rgba(255,255,255,0.24); --mut:#aab6c3; --on-acc:#0b1318; }
 li.entry, .toolbar, .filters, #rp-status, #rp-empty { font-family:var(--ui); color:var(--ink); }
 .toolbar button, .filters button, #rp-search, #rp-status button, .cite { font-family:var(--ui); }
-#rp-search { color-scheme:dark; }
+.rp[data-rp="dark"] #rp-search { color-scheme:dark; }
+.rp[data-rp="light"] #rp-search { color-scheme:light; }
 #rp-search::placeholder { color:var(--mut); opacity:1; }
 .toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.8em 1.5em; margin:0.5em 0 1em; padding:0.8em 0; border-top:2px solid var(--ink); border-bottom:1px solid var(--rule); }
 .ledger { font-family:var(--ui);font-variant-numeric:tabular-nums; font-size:0.78em; letter-spacing:0.02em; color:var(--mut); }
@@ -21,7 +25,7 @@ li.entry, .toolbar, .filters, #rp-status, #rp-empty { font-family:var(--ui); col
 #rp-search { font:inherit; font-size:0.85em; padding:0.4em 0.7em; width:15em; max-width:100%; color:var(--ink); background:transparent; border:1px solid var(--rule); border-radius:2px; }
 #rp-search:focus { outline:2px solid var(--acc); outline-offset:1px; }
 #abs-toggle { font:inherit; font-size:0.8em; cursor:pointer; padding:0.45em 0.9em; color:var(--acc); background:transparent; border:1px solid var(--acc); border-radius:2px; transition:background 0.2s,color 0.2s; }
-#abs-toggle:hover { background:var(--acc); color:#0b1318; }
+#abs-toggle:hover { background:var(--acc); color:var(--on-acc); }
 .filters { display:grid; gap:0.5em; margin:0 0 0.8em; }
 .frow { display:flex; flex-wrap:wrap; align-items:center; gap:0.45em; }
 .flabel { min-width:5.2em; font-family:var(--ui);font-variant-numeric:tabular-nums; font-size:0.68em; letter-spacing:0.12em; text-transform:uppercase; color:var(--mut); }
@@ -29,7 +33,7 @@ li.entry, .toolbar, .filters, #rp-status, #rp-empty { font-family:var(--ui); col
 button.tag { cursor:pointer; }
 button.tag:hover { border-color:var(--acc); color:var(--acc); }
 button.tag:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
-.tag[aria-pressed="true"], button.tag[aria-pressed="true"]:hover { background:var(--acc); border-color:var(--acc); color:#0b1318; }
+.tag[aria-pressed="true"], button.tag[aria-pressed="true"]:hover { background:var(--acc); border-color:var(--acc); color:var(--on-acc); }
 .tag.lg { font-size:0.76em; padding:0.3em 0.8em; }
 .tag.i { border-style:dashed; }
 #rp-status { margin:0.2em 0 0.6em; font-size:0.82em; font-style:italic; color:var(--mut); }
@@ -81,11 +85,12 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 .jtotal { margin:0.5em 0 0; font-size:0.84em; font-style:italic; color:var(--mut); }
 .actions { display:flex; flex-wrap:wrap; gap:0.5em; margin-top:0.8em; }
 .cite { font:inherit; font-size:0.7em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; padding:0.3em 0.8em; color:var(--acc); background:transparent; border:1px solid var(--acc); border-radius:2px; transition:all 0.2s ease; }
-.cite:hover, .cite.ok { background:var(--acc); color:#0b1318; }
+.cite:hover, .cite.ok { background:var(--acc); color:var(--on-acc); }
 @media (max-width:600px) { li.entry { padding-left:2.4em; } .tools { width:100%; } #rp-search { flex:1; width:auto; } ol.journey { flex-direction:column; align-items:flex-start; } ol.journey li.step { width:auto; text-align:left; } ol.journey li.step i { margin:0 0 0.3em; } ol.journey li.dur { border-top:0; border-left:2px dashed var(--acc); margin:0.2em 0 0.2em 0.35em; padding:0.4em 0 0.4em 0.9em; text-align:left; min-width:0; } }
 @media (prefers-reduced-motion: reduce) { li.entry, details.abstract .abstract-text { animation:none !important; } li.entry::after, li.entry { transition:none; } }
 </style>
 
+<div class="rp">
 <div class="toolbar"><div class="ledger" id="ledger"></div><div class="tools"><input id="rp-search" type="search" placeholder="Search titles and abstracts  ( / )" aria-label="Search papers"><button id="abs-toggle" type="button">Expand all abstracts</button></div></div>
 <div class="filters">
 <div class="frow"><span class="flabel">Method</span><button type="button" class="tag lg" data-f="method:iv" aria-pressed="false">Instrumental variables</button><button type="button" class="tag lg" data-f="method:did" aria-pressed="false">Difference-in-differences</button><button type="button" class="tag lg" data-f="method:cohort" aria-pressed="false">Cohort variation</button></div>
@@ -94,7 +99,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 <p id="rp-status" aria-live="polite" hidden></p>
 <p id="rp-empty" hidden>No papers match your search.</p>
 
-# Peer-reviewed Publications
+<h1 id="peer-reviewed-publications">Peer-reviewed Publications</h1>
 
 <ul class="papers">
 <li class="entry" data-id="rewiring" data-method="iv" data-data="nfhs">
@@ -126,7 +131,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 </li>
 </ul>
 
-# Working Papers
+<h1 id="working-papers">Working Papers</h1>
 
 <ul class="papers">
 <li class="entry" data-id="protective" data-method="iv" data-data="nfhs">
@@ -186,7 +191,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 </li>
 </ul>
 
-# Work in Progress
+<h1 id="work-in-progress">Work in Progress</h1>
 
 <ul class="papers">
 <li class="entry" data-id="wip" data-method="" data-data="">
@@ -196,7 +201,7 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 </li>
 </ul>
 
-# Other Publications
+<h1 id="other-publications">Other Publications</h1>
 
 <ul class="papers">
 <li class="entry" data-id="opinion" data-method="" data-data="">
@@ -206,6 +211,42 @@ ol.journey li.dur { flex:1; min-width:3.6em; margin-top:0.42em; padding-top:0.4e
 <span class="authors">with <a href="https://gauravdhamija5.weebly.com/">Dr. Gaurav Dhamija</a> and <a href="https://maniniojha.wordpress.com/">Dr. Manini Ojha</a></span>
 </li>
 </ul>
+
+</div>
+
+<script>
+(function () {
+  var rp = document.querySelector('.rp');
+  if (!rp) { return; }
+  function bg() {
+    var e = rp.parentElement;
+    while (e) {
+      var m = (getComputedStyle(e).backgroundColor || '').match(/[\d.]+/g);
+      if (m && m.length >= 3 && (m.length < 4 || parseFloat(m[3]) > 0.5)) { return m.map(Number); }
+      e = e.parentElement;
+    }
+    return null;
+  }
+  function sync() {
+    var c = bg();
+    if (!c) { rp.removeAttribute('data-rp'); return; }
+    var lum = 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2];
+    rp.setAttribute('data-rp', lum < 140 ? 'dark' : 'light');
+  }
+  sync();
+  window.addEventListener('load', sync);
+  document.addEventListener('click', function () { setTimeout(sync, 60); setTimeout(sync, 400); });
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) { mq.addEventListener('change', function () { setTimeout(sync, 60); }); }
+  }
+  if ('MutationObserver' in window) {
+    var mo = new MutationObserver(function () { setTimeout(sync, 30); });
+    mo.observe(document.documentElement, { attributes: true });
+    mo.observe(document.body, { attributes: true });
+  }
+})();
+</script>
 
 <script>
 (function () {
