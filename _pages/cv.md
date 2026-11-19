@@ -6,7 +6,7 @@ author_profile: true
 ---
 {% include base_path %}
 <iframe 
-    src="/files/pdf/CurriculumVitae_skg (10).pdf" 
+    src="/files/pdf/CurriculumVitae_Sagnik..pdf" 
     width="100%" 
     height="700" 
     frameborder="0" 
